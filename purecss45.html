@@ -1,0 +1,439 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+    <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+    <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+    <title>CodePen - Daily CSS Day45 - Space Mascot</title>
+    <style>
+    body {
+      background: #000000;
+      color: #000000;
+      font-family: sans-serif;
+    }
+    
+    .box {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      margin: auto;
+      background: none;
+    }
+    
+    .title {
+      font-size: 1.5em;
+      text-align: center;
+      color: #FFFFFF;
+      margin-bottom: 0px;
+    }
+    
+    .title span {
+      color: #FFFFFF;
+    }
+    
+    .container1 {
+      position: absolute;
+      width: 30%;
+      height: 50%;
+      top: -10%;
+      left: 0%;
+      margin: auto;
+      background: none;
+      animation: show-move 10s linear 0s infinite normal forwards running;
+    }
+    
+    .container2 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      left: 0%;
+      margin: auto;
+      background: none;
+      transform-origin: 50% 100%;
+      animation: show-flip 10s linear 0s infinite normal forwards running;
+    }
+    
+    .body {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 50%;
+      left: 0%;
+      margin: auto;
+      background: yellow;
+      border-radius: 50% 50% 1em 1em;
+    }
+    
+    .eye-right {
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      top: 75%;
+      left: 60%;
+      margin: auto;
+      background: #FFFFFF;
+      border-radius: 50%;
+      border: solid 2px #000000;
+    }
+    .eye-right:before {
+      position: absolute;
+      content: '';
+      width: 50%;
+      height: 50%;
+      top: 45%;
+      left: 2%;
+      margin: auto;
+      background: #000000;
+      border-radius: 50%;
+    }
+    
+    .nose {
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      top: 90%;
+      left: 55%;
+      margin: auto;
+      background: orange;
+      border-radius: 50% 0 0.5em 0;
+      transform: rotate(100deg);
+    }
+    
+    .eye-left {
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      top: 75%;
+      left: 35%;
+      margin: auto;
+      background: #FFFFFF;
+      border-radius: 50%;
+      border: solid 2px #000000;
+    }
+    .eye-left:before {
+      position: absolute;
+      content: '';
+      width: 50%;
+      height: 50%;
+      top: 45%;
+      left: 58%;
+      margin: auto;
+      background: #000000;
+      border-radius: 50%;
+    }
+    
+    .mouth {
+      position: absolute;
+      width: 15%;
+      height: 8%;
+      top: 110%;
+      left: 55%;
+      margin: auto;
+      background: #000000;
+      border-radius: 50%;
+    }
+    
+    .wing {
+      position: absolute;
+      width: 20%;
+      height: 30%;
+      top: 105%;
+      left: 0%;
+      margin: auto;
+      background: yellow;
+      border-radius: 50% 0 0.5em 0;
+      border: none;
+      border: solid 2px #000000;
+      transform-origin: center top;
+      transform: skew(-10deg) rotate(10deg);
+      animation: show-wing 1s linear 0s infinite normal forwards running;
+    }
+    
+    .feathers {
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      top: 40%;
+      left: 35%;
+      margin: auto;
+      background: yellow;
+      border-radius: 0 90% 0 0;
+      border: none;
+      transform: rotate(-10deg);
+    }
+    .feathers:before {
+      position: absolute;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 10%;
+      left: -70%;
+      margin: auto;
+      background: yellow;
+      border-radius: 0 90% 0 0;
+      border: none;
+      transform: rotate(-10deg);
+    }
+    
+    .foot-right {
+      position: absolute;
+      width: 10%;
+      height: 15%;
+      top: 140%;
+      left: 75%;
+      margin: auto;
+      background: orange;
+      border-radius: 50%;
+      border: none;
+      border: solid 1px #000000;
+      top: 140%;
+      left: 75%;
+    }
+    .foot-right:before {
+      position: absolute;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      left: -70%;
+      margin: auto;
+      background: orange;
+      border-radius: 50%;
+      border: none;
+      border: solid 1px #000000;
+    }
+    .foot-right:after {
+      position: absolute;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      left: -140%;
+      margin: auto;
+      background: orange;
+      border-radius: 50%;
+      border: none;
+      border: solid 1px #000000;
+    }
+    
+    .foot-left {
+      position: absolute;
+      width: 10%;
+      height: 15%;
+      top: 140%;
+      left: 75%;
+      margin: auto;
+      background: orange;
+      border-radius: 50%;
+      border: none;
+      border: solid 1px #000000;
+      top: 140%;
+      left: 35%;
+    }
+    .foot-left:before {
+      position: absolute;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      left: -70%;
+      margin: auto;
+      background: orange;
+      border-radius: 50%;
+      border: none;
+      border: solid 1px #000000;
+    }
+    .foot-left:after {
+      position: absolute;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      left: -140%;
+      margin: auto;
+      background: orange;
+      border-radius: 50%;
+      border: none;
+      border: solid 1px #000000;
+    }
+    
+    .helmet {
+      position: absolute;
+      width: 80%;
+      height: 50%;
+      top: 50%;
+      left: 0%;
+      margin: auto;
+      background: none;
+      border-radius: 50% 50% 1em 1em;
+      border: solid 20px #666666;
+    }
+    .helmet:before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 82%;
+      top: -5%;
+      left: -20%;
+      margin: auto;
+      background: none;
+      border-radius: 50% 50% 1em 1em;
+      border: solid 20px #666666;
+    }
+    .helmet:after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 82%;
+      top: -5%;
+      left: -20%;
+      margin: auto;
+      background: none;
+      border-radius: 50%;
+      border: solid 20px #666666;
+    }
+    
+    .rock {
+      position: absolute;
+      width: 5%;
+      height: 5%;
+      top: 65%;
+      left: 47%;
+      margin: auto;
+      background: brown;
+      border-radius: 0.5em 0.2em 80% 0.2em;
+      border: none;
+      transform: rotate(40deg);
+    }
+    
+    .learning {
+      color: #FFFFFF;
+      text-align: center;
+      margin-top: 0px;
+    }
+    
+    .footer {
+      color: #FFFFFF;
+      text-align: center;
+    }
+    .footer p a:active,
+    .footer p a:focus,
+    .footer p a:hover,
+    .footer p a:visited {
+      color: #FFFFFF;
+    }
+    
+    @keyframes show-move {
+      0% {
+        transform: translate(0, 0);
+      }
+      20% {
+        transform: translate(100px, 0);
+      }
+      70% {
+        transform: translate(600px, -70px);
+      }
+      100% {
+        transform: translate(600px, -70px);
+      }
+    }
+    @keyframes show-flip {
+      0% {
+        transform: rotate(0deg);
+      }
+      20% {
+        transform: rotate(0deg);
+      }
+      70% {
+        transform: rotate(360deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes show-wing {
+      0% {
+        transform: skew(-10deg) rotate(10deg);
+      }
+      20% {
+        transform: skew(-10deg) rotate(20deg);
+      }
+      30% {
+        transform: skew(-10deg) rotate(10deg);
+      }
+      40% {
+        transform: skew(-10deg) rotate(20deg);
+      }
+      50% {
+        transform: skew(-10deg) rotate(10deg);
+      }
+      60% {
+        transform: skew(-10deg) rotate(20deg);
+      }
+      70% {
+        transform: skew(-10deg) rotate(10deg);
+      }
+      80% {
+        transform: skew(-10deg) rotate(20deg);
+      }
+      90% {
+        transform: skew(-10deg) rotate(10deg);
+      }
+    }
+    </style>
+    <script>
+      window.console = window.console || function(t) {};
+    </script>
+    <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+      }
+    </script>
+    </head>
+    <body translate="no">
+    
+    <div class="title">
+    <h2>Daily CSS - Day 45 - <span>Space Mascot</span></h2>
+    </div>
+    <div class="box">
+    <div class="container1">
+    <div class="container2">
+    <div class="body"></div>
+    <div class="eye-right"></div>
+    <div class="nose"></div>
+    <div class="eye-left"></div>
+    <div class="mouth"></div>
+    <div class="wing"></div>
+    <div class="feathers"></div>
+    <div class="foot-right"></div>
+    <div class="foot-left"></div>
+    <div class="helmet"></div>
+    </div>
+    </div>
+    <div class="rock"></div>
+    </div>
+    <div class="learning">
+    <h1>Good:</h1>
+    <p>- More work with border radius.</p>
+    <p>- Used 2 containers to control annimation cleanly.</p>
+    <p>- I do like my chicken, so I used him again.</p>
+    <h1>Bad:</h1>
+    <p>- The wing isn't and nice as I would like.</p>
+    <p>- I need to learn how to create a rock.</p>
+    <h1>Ugly:</h1>
+    <p>-...</p>
+    </div>
+    <div class="footer">
+    <hr>
+    <p>
+    Page built by <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (SW | FW | Embedded | Web) 2017</em></p>
+    </div>
+    
+    
+    </body></html>

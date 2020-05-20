@@ -1,0 +1,433 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+    <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+    <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+    <title>CodePen - Daily CSS Day48 - Craft Beer</title>
+    <style>
+    body {
+      background: #000000;
+      color: #000000;
+      font-family: sans-serif;
+    }
+    
+    .box {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      margin: auto;
+      background: none;
+      overflow: hidden;
+    }
+    
+    .title {
+      font-size: 1.5em;
+      text-align: center;
+      color: #FFFFFF;
+      margin-bottom: 0px;
+    }
+    
+    .title span {
+      color: #FFFFFF;
+    }
+    
+    .string1 {
+      position: absolute;
+      width: 1%;
+      height: 75%;
+      top: 0%;
+      left: 24%;
+      margin: auto;
+      background: #404040;
+      overflow: hidden;
+      animation: show-string1 7s linear 0s infinite normal forwards running;
+    }
+    
+    .bottle-container {
+      position: absolute;
+      width: 15%;
+      height: 45%;
+      top: 45%;
+      left: 25%;
+      margin: auto;
+      background: none;
+      transform-origin: center 44%;
+      animation: show-bottle 7s linear 0s infinite normal forwards running;
+    }
+    
+    .beer-pouring {
+      position: absolute;
+      width: 6%;
+      height: 25%;
+      top: 32%;
+      left: 52%;
+      margin: auto;
+      background: #DA6900;
+      border-radius: 0 5em 0 0;
+      opacity: 0.0;
+      animation: show-pouring 7s linear 0s infinite normal forwards running;
+    }
+    
+    .bottle-upper {
+      position: absolute;
+      width: 50%;
+      height: 40%;
+      top: 0%;
+      left: 25%;
+      margin: auto;
+      background: #611400;
+      border-radius: 0.5em 0.5em 0 0;
+    }
+    
+    .bottle-lower {
+      position: absolute;
+      width: 100%;
+      height: 70%;
+      top: 30%;
+      left: 0%;
+      margin: auto;
+      background: #611400;
+      border-radius: 4em 4em 0.5em 0.5em;
+    }
+    .bottle-lower:before {
+      position: absolute;
+      top: 30%;
+      left: 0%;
+      font-size: 1.6em;
+      font-style: italic;
+    }
+    
+    .bow {
+      position: absolute;
+      width: 100px;
+      height: 50px;
+      top: 50%;
+      left: -100%;
+      transform: scale(0.5, 0.5) rotate(-90deg);
+    }
+    .bow:before {
+      position: absolute;
+      content: '';
+      width: 30px;
+      height: 30px;
+      top: 0%;
+      left: 0%;
+      border: 8px solid #404040;
+      border-radius: 50px 50px 0 50px;
+      transform: rotate(-10deg);
+    }
+    .bow:after {
+      position: absolute;
+      content: '';
+      width: 30px;
+      height: 30px;
+      top: 0%;
+      left: 45%;
+      border: 8px solid #404040;
+      border-radius: 50px 50px 0 50px;
+      transform: rotate(100deg);
+    }
+    
+    .string2 {
+      position: absolute;
+      width: 100%;
+      height: 3%;
+      top: 60%;
+      left: 0%;
+      margin: auto;
+      background: #404040;
+      overflow: hidden;
+    }
+    
+    .beer-foam {
+      position: absolute;
+      width: 30%;
+      height: 10%;
+      top: 46%;
+      left: 47%;
+      margin: auto;
+      background: none;
+      overflow: hidden;
+      opacity: 0.0;
+      animation: show-foam 7s linear 0s infinite normal forwards running;
+    }
+    
+    .foam1,
+    .foam2,
+    .foam3,
+    .foam4,
+    .foam5 {
+      position: absolute;
+      width: 30%;
+      height: 70%;
+      margin: auto;
+      background: white;
+      border-radius: 50%;
+    }
+    
+    .foam1 {
+      top: 46%;
+      left: 0%;
+    }
+    
+    .foam2 {
+      top: 50%;
+      left: 20%;
+    }
+    
+    .foam3 {
+      top: 40%;
+      left: 40%;
+    }
+    
+    .foam4 {
+      top: 40%;
+      left: 50%;
+    }
+    
+    .foam5 {
+      top: 50%;
+      left: 70%;
+    }
+    
+    .glass-back {
+      position: absolute;
+      width: 24%;
+      height: 30%;
+      top: 56%;
+      left: 50%;
+      margin: auto;
+      background: #000000;
+      overflow: hidden;
+    }
+    
+    .glass-handle {
+      position: absolute;
+      width: 12%;
+      height: 18%;
+      top: 60%;
+      left: 70%;
+      margin: auto;
+      background: none;
+      border-radius: 2em;
+      border: solid 10px #404040;
+    }
+    
+    .beer-glass {
+      position: absolute;
+      width: 80%;
+      height: 100%;
+      top: 0%;
+      left: 10%;
+      margin: auto;
+      background: #DA6900;
+      transform: translate(0, 120px);
+      animation: show-beer 7s linear 0s infinite normal forwards running;
+    }
+    
+    .glass-side1 {
+      position: absolute;
+      width: 8%;
+      height: 30%;
+      top: 56%;
+      left: 50%;
+      margin: auto;
+      background: #404040;
+      opacity: 0.6;
+    }
+    
+    .glass-side2 {
+      position: absolute;
+      width: 8%;
+      height: 30%;
+      top: 56%;
+      left: 58%;
+      margin: auto;
+      background: #404040;
+      opacity: 0.4;
+    }
+    
+    .glass-side3 {
+      position: absolute;
+      width: 8%;
+      height: 30%;
+      top: 56%;
+      left: 66%;
+      margin: auto;
+      background: #404040;
+      opacity: 0.6;
+    }
+    
+    .glass-rim {
+      position: absolute;
+      width: 26%;
+      height: 4%;
+      top: 56%;
+      left: 49%;
+      margin: auto;
+      background: #404040;
+      border-radius: 2em;
+    }
+    
+    .glass-base {
+      position: absolute;
+      width: 26%;
+      height: 4%;
+      top: 86%;
+      left: 49%;
+      margin: auto;
+      background: #404040;
+      border-radius: 2em;
+    }
+    
+    .learning {
+      color: #FFFFFF;
+      text-align: center;
+      margin-top: 0px;
+      z-index: 2;
+    }
+    
+    .footer {
+      color: #FFFFFF;
+      text-align: center;
+    }
+    .footer p a:active,
+    .footer p a:focus,
+    .footer p a:hover,
+    .footer p a:visited {
+      color: #FFFFFF;
+    }
+    
+    @keyframes show-string1 {
+      0% {
+        transform: translate(0, 0);
+      }
+      10% {
+        transform: translate(0, 0);
+      }
+      40% {
+        transform: translate(0, -150px);
+      }
+      100% {
+        transform: translate(0, -150px);
+      }
+    }
+    @keyframes show-bottle {
+      0% {
+        transform: translate(0px, 0px) rotate(0deg);
+      }
+      10% {
+        transform: translate(0px, 0px) rotate(0deg);
+      }
+      40% {
+        transform: translate(0px, -120px) rotate(90deg);
+      }
+      100% {
+        transform: translate(0px, -120px) rotate(90deg);
+      }
+    }
+    @keyframes show-pouring {
+      0% {
+        opacity: 0.0;
+      }
+      40% {
+        opacity: 0.0;
+      }
+      50% {
+        opacity: 1.0;
+      }
+      60% {
+        opacity: 0.0;
+      }
+      100% {
+        opacity: 0.0;
+      }
+    }
+    @keyframes show-beer {
+      0% {
+        transform: translate(0, 120px);
+      }
+      40% {
+        transform: translate(0, 120px);
+      }
+      60% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+    @keyframes show-foam {
+      0% {
+        opacity: 0.0;
+      }
+      55% {
+        opacity: 0.0;
+      }
+      60% {
+        opacity: 1.0;
+      }
+      100% {
+        opacity: 1.0;
+      }
+    }
+    </style>
+    <script>
+      window.console = window.console || function(t) {};
+    </script>
+    <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+      }
+    </script>
+    </head>
+    <body translate="no">
+    
+    <div class="title">
+    <h2>Daily CSS - Day 48 - <span>Craft Beer</span></h2>
+    </div>
+    <div class="box">
+    <div class="string1"></div>
+    <div class="bottle-container">
+    <div class="bottle-upper"></div>
+    <div class="bottle-lower"></div>
+    <div class="bow"></div>
+    <div class="string2"></div>
+    </div>
+    <div class="beer-pouring"></div>
+    <div class="glass-handle"></div>
+    <div class="glass-back">
+    <div class="beer-glass"></div>
+    </div>
+    <div class="beer-foam">
+    <div class="foam1"></div>
+    <div class="foam2"></div>
+    <div class="foam3"></div>
+    <div class="foam4"></div>
+    <div class="foam5"></div>
+    </div>
+    <div class="glass-side1"></div>
+    <div class="glass-side2"></div>
+    <div class="glass-side3"></div>
+    <div class="glass-rim"></div>
+    <div class="glass-base"></div>
+    </div>
+    <div class="learning">
+    <h1>Good:</h1>
+    <p>- Fun coordinating 5 animations.</p>
+    <p>- This was another fairly quick challenge.</p>
+    <p>- Think I have decent technique to build these now.</p>
+    <h1>Bad:</h1>
+    <p>- Should have made bottle and glass with reflections</p>
+    <h1>Ugly:</h1>
+    <p>- I can't drink real beer :(</p>
+    </div>
+    <div class="footer">
+    <hr>
+    <p>
+    Page built by <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (SW | FW | Embedded | Web) 2017</em></p>
+    </div>
+    
+    
+    </body></html>

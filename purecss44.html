@@ -1,0 +1,299 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+    <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+    <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+    <title>CodePen - Daily CSS Day44 - Robot</title>
+    <style>
+    body {
+      background: #000000;
+      color: #000000;
+      font-family: sans-serif;
+    }
+    
+    .box {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      margin: auto;
+      background: none;
+    }
+    
+    .title {
+      font-size: 1.5em;
+      text-align: center;
+      color: #FFFFFF;
+      margin-bottom: 0px;
+    }
+    
+    .title span {
+      color: #FFFFFF;
+    }
+    
+    .cloud {
+      position: absolute;
+      width: 100px;
+      height: 1px;
+      top: 85%;
+      left: 32%;
+      background: #333333;
+      border-radius: 50%;
+      box-shadow: 0px 0px 130px 130px #333333;
+      overflow: hidden;
+    }
+    
+    .thrust1 {
+      position: absolute;
+      width: 30px;
+      height: 1px;
+      top: 85%;
+      left: 42%;
+      background: gray;
+      border-radius: 50%;
+      box-shadow: 0px 0px 30px 20px gray;
+      overflow: hidden;
+    }
+    
+    .thrust2 {
+      position: absolute;
+      width: 60px;
+      height: 1px;
+      top: 95%;
+      left: 37%;
+      background: #666666;
+      border-radius: 50%;
+      box-shadow: 0px 0px 50px 30px #666666;
+      overflow: hidden;
+    }
+    
+    .arm-right-lower {
+      position: absolute;
+      width: 8%;
+      height: 15%;
+      top: 60%;
+      left: 70%;
+      margin: auto;
+      border-radius: 50%;
+      background: radial-gradient(circle at 0px 0px, #5cabff, #000000);
+      transform: rotate(-90deg);
+    }
+    
+    .body {
+      position: absolute;
+      width: 50%;
+      height: 40%;
+      top: 40%;
+      left: 25%;
+      margin: auto;
+      border-radius: 50%;
+      background: radial-gradient(circle at 40px 50px, #5cabff, #000000);
+    }
+    
+    .arm-left-lower {
+      position: absolute;
+      width: 8%;
+      height: 15%;
+      top: 60%;
+      left: 35%;
+      margin: auto;
+      border-radius: 50%;
+      background: radial-gradient(circle at 0px 0px, #5cabff, #000000);
+      transform: rotate(-90deg);
+    }
+    
+    .arm-left {
+      position: absolute;
+      width: 10%;
+      height: 20%;
+      top: 50%;
+      left: 27%;
+      margin: auto;
+      border-radius: 50%;
+      background: radial-gradient(circle at 0px 20px, #5cabff, #000000);
+      transform: rotate(-10deg);
+    }
+    
+    .head {
+      position: absolute;
+      width: 30%;
+      height: 25%;
+      top: 20%;
+      left: 35%;
+      margin: auto;
+      border-radius: 50%;
+      background: radial-gradient(circle at 40px 50px, #5cabff, #000000);
+    }
+    
+    .eye-right {
+      position: absolute;
+      width: 20%;
+      height: 40%;
+      top: 20%;
+      left: 60%;
+      margin: auto;
+      background: #FFFFFF;
+      border-radius: 50%;
+      border: solid 2px #000000;
+    }
+    .eye-right:before {
+      position: absolute;
+      content: '';
+      width: 50%;
+      height: 50%;
+      top: 40%;
+      left: 12%;
+      margin: auto;
+      background: #000000;
+      border-radius: 50%;
+    }
+    
+    .eye-left {
+      position: absolute;
+      width: 20%;
+      height: 40%;
+      top: 20%;
+      left: 35%;
+      margin: auto;
+      background: #FFFFFF;
+      border-radius: 50%;
+      border: solid 2px #000000;
+    }
+    .eye-left:before {
+      position: absolute;
+      content: '';
+      width: 50%;
+      height: 50%;
+      top: 40%;
+      left: 12%;
+      margin: auto;
+      background: #000000;
+      border-radius: 50%;
+    }
+    
+    .antenna {
+      position: absolute;
+      -webkit-clip-path: polygon(50% 0%, 40% 100%, 60% 100%);
+      clip-path: polygon(50% 0%, 40% 100%, 60% 100%);
+      width: 50%;
+      height: 55%;
+      top: -50%;
+      left: 25%;
+      margin: auto;
+      background: radial-gradient(circle at 40px 50px, #5cabff, #000000);
+      z-index: -1;
+    }
+    
+    .ring1 {
+      position: absolute;
+      margin: auto;
+      background: none;
+      border-radius: 50%;
+      border: solid 2px #71737e;
+      z-index: -2;
+      width: 30%;
+      height: 10%;
+      top: -50%;
+      left: 34%;
+    }
+    
+    .ring2 {
+      position: absolute;
+      margin: auto;
+      background: none;
+      border-radius: 50%;
+      border: solid 2px #71737e;
+      z-index: -2;
+      width: 50%;
+      height: 20%;
+      top: -55%;
+      left: 24%;
+    }
+    
+    .ring3 {
+      position: absolute;
+      margin: auto;
+      background: none;
+      border-radius: 50%;
+      border: solid 2px #71737e;
+      z-index: -2;
+      width: 70%;
+      height: 30%;
+      top: -62%;
+      left: 14%;
+    }
+    
+    .learning {
+      color: #FFFFFF;
+      text-align: center;
+      margin-top: 0px;
+      z-index: 2;
+    }
+    
+    .footer {
+      color: #FFFFFF;
+      text-align: center;
+    }
+    .footer p a:active,
+    .footer p a:focus,
+    .footer p a:hover,
+    .footer p a:visited {
+      color: #FFFFFF;
+    }
+    
+    /*
+    @keyframes show-move {
+       0%   { transform: translate(0, 0); }
+     50%    { transform: translate(300px, 0); }
+      100%  { transform: translate(0, 0); }
+    }
+    */
+    </style>
+    <script>
+      window.console = window.console || function(t) {};
+    </script>
+    <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+      }
+    </script>
+    </head>
+    <body translate="no">
+    
+    <div class="title">
+    <h2>Daily CSS - Day 44 - <span>Robot</span></h2>
+    </div>
+    <div class="box">
+    <div class="cloud"></div>
+    <div class="thrust1"></div>
+    <div class="thrust2"></div>
+    <div class="arm-right-lower"></div>
+    <div class="body"></div>
+    <div class="arm-left"></div>
+    <div class="arm-left-lower"></div>
+    <div class="head">
+    <div class="eye-right"></div>
+    <div class="eye-left"></div>
+    <div class="antenna"></div>
+    <div class="ring1"></div>
+    <div class="ring2"></div>
+    <div class="ring3"></div>
+    </div>
+    </div>
+    <div class="learning">
+    <h1>Good:</h1>
+    <p>- Used radial gradient for sphere effect.</p>
+    <p>- Really happy with the cloud and thrust effect using shadowbox.</p>
+    <h1>Bad:</h1>
+    <p>- I should add annimations to this one.</p>
+    <h1>Ugly:</h1>
+    <p>- I really don't like picking my own subject/character.</p>
+    </div>
+    <div class="footer">
+    <hr>
+    <p>
+    Page built by <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (SW | FW | Embedded | Web) 2017</em></p>
+    </div>
+    
+    
+    </body></html>

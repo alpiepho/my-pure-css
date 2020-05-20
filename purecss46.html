@@ -1,0 +1,422 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+    <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+    <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+    <title>CodePen - Daily CSS Day46 - Pinata</title>
+    <style>
+    body {
+      background: #000000;
+      color: #000000;
+      font-family: sans-serif;
+    }
+    
+    .box {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      margin: auto;
+      background: none;
+      transform-origin: center top;
+      animation: show-box 5s linear 0s infinite normal forwards running;
+    }
+    
+    .title {
+      font-size: 1.5em;
+      text-align: center;
+      color: #FFFFFF;
+      margin-bottom: 0px;
+    }
+    
+    .title span {
+      color: #FFFFFF;
+    }
+    
+    .string {
+      position: absolute;
+      width: 1%;
+      height: 30%;
+      top: 0%;
+      left: 48%;
+      margin: auto;
+      background: #404040;
+      overflow: hidden;
+    }
+    
+    .bow {
+      position: absolute;
+      width: 100px;
+      height: 50px;
+      top: 23%;
+      left: 40%;
+    }
+    .bow:before {
+      position: absolute;
+      content: '';
+      width: 30px;
+      height: 30px;
+      top: 0%;
+      left: 0%;
+      border: 4px solid #404040;
+      border-radius: 50px 50px 0 50px;
+      transform: rotate(-10deg);
+    }
+    .bow:after {
+      position: absolute;
+      content: '';
+      width: 30px;
+      height: 30px;
+      top: 0%;
+      left: 45%;
+      border: 4px solid #404040;
+      border-radius: 50px 50px 0 50px;
+      transform: rotate(100deg);
+    }
+    
+    .egg {
+      position: absolute;
+      width: 50%;
+      height: 60%;
+      top: 30%;
+      left: 24%;
+      background: none;
+      overflow: hidden;
+      background-color: none;
+      border: solid 1px #FFFFFF;
+      border-radius: 50%  50%  50%  50%  / 60%   60%   40%  40%;
+    }
+    
+    .container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      left: 0%;
+      margin: auto;
+      background: none;
+    }
+    
+    .word-1 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      top: 90%;
+      left: 30%;
+      transform: rotate(0deg);
+      animation: show-word-1 5s linear 0s infinite normal forwards running;
+    }
+    .word-1:before {
+      position: absolute;
+      content: "Party";
+      font-size: 2.5em;
+      color: maroon;
+    }
+    
+    @keyframes show-word-1 {
+      100% {
+        top: 50%;
+        left: 10%;
+        transform: rotate(0deg);
+      }
+    }
+    .word-2 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      top: 90%;
+      left: 80%;
+      transform: rotate(-30deg);
+      animation: show-word-2 5s linear 0s infinite normal forwards running;
+    }
+    .word-2:before {
+      position: absolute;
+      content: "Gonna Miss";
+      font-size: 2.5em;
+      color: orange;
+    }
+    
+    @keyframes show-word-2 {
+      100% {
+        top: 90%;
+        left: 10%;
+        transform: rotate(30deg);
+      }
+    }
+    .word-3 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      top: 90%;
+      left: 20%;
+      transform: rotate(-45deg);
+      animation: show-word-3 5s linear 0s infinite normal forwards running;
+    }
+    .word-3:before {
+      position: absolute;
+      content: "Woo Hoo";
+      font-size: 2.5em;
+      color: maroon;
+    }
+    
+    @keyframes show-word-3 {
+      100% {
+        top: 90%;
+        left: 70%;
+        transform: rotate(0deg);
+      }
+    }
+    .word-4 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      top: 10%;
+      left: 20%;
+      transform: rotate(-45deg);
+      animation: show-word-4 5s linear 0s infinite normal forwards running;
+    }
+    .word-4:before {
+      position: absolute;
+      content: "Yeah!";
+      font-size: 2em;
+      color: cyan;
+    }
+    
+    @keyframes show-word-4 {
+      100% {
+        top: 90%;
+        left: 80%;
+        transform: rotate(45deg);
+      }
+    }
+    .word-5 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      top: 60%;
+      left: 80%;
+      transform: rotate(45deg);
+      animation: show-word-5 5s linear 0s infinite normal forwards running;
+    }
+    .word-5:before {
+      position: absolute;
+      content: "Swing";
+      font-size: 2em;
+      color: yellow;
+    }
+    
+    @keyframes show-word-5 {
+      100% {
+        top: 20%;
+        left: 40%;
+        transform: rotate(15deg);
+      }
+    }
+    .word-6 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      top: 20%;
+      left: 80%;
+      transform: rotate(0deg);
+      animation: show-word-6 5s linear 0s infinite normal forwards running;
+    }
+    .word-6:before {
+      position: absolute;
+      content: "Sing";
+      font-size: 3.5em;
+      color: maroon;
+    }
+    
+    @keyframes show-word-6 {
+      100% {
+        top: 30%;
+        left: 30%;
+        transform: rotate(30deg);
+      }
+    }
+    .word-7 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      top: 40%;
+      left: 60%;
+      transform: rotate(45deg);
+      animation: show-word-7 5s linear 0s infinite normal forwards running;
+    }
+    .word-7:before {
+      position: absolute;
+      content: "Bam!";
+      font-size: 2.5em;
+      color: violet;
+    }
+    
+    @keyframes show-word-7 {
+      100% {
+        top: 30%;
+        left: 70%;
+        transform: rotate(30deg);
+      }
+    }
+    .word-8 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      top: 20%;
+      left: 60%;
+      transform: rotate(-15deg);
+      animation: show-word-8 5s linear 0s infinite normal forwards running;
+    }
+    .word-8:before {
+      position: absolute;
+      content: "Wow";
+      font-size: 2.5em;
+      color: blue;
+    }
+    
+    @keyframes show-word-8 {
+      100% {
+        top: 60%;
+        left: 50%;
+        transform: rotate(45deg);
+      }
+    }
+    .word-9 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      top: 60%;
+      left: 70%;
+      transform: rotate(-30deg);
+      animation: show-word-9 5s linear 0s infinite normal forwards running;
+    }
+    .word-9:before {
+      position: absolute;
+      content: "Can't hit me";
+      font-size: 2.5em;
+      color: orange;
+    }
+    
+    @keyframes show-word-9 {
+      100% {
+        top: 10%;
+        left: 70%;
+        transform: rotate(0deg);
+      }
+    }
+    .word-10 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      top: 80%;
+      left: 30%;
+      transform: rotate(0deg);
+      animation: show-word-10 5s linear 0s infinite normal forwards running;
+    }
+    .word-10:before {
+      position: absolute;
+      content: "Missed!";
+      font-size: 2em;
+      color: orange;
+    }
+    
+    @keyframes show-word-10 {
+      100% {
+        top: 90%;
+        left: 10%;
+        transform: rotate(45deg);
+      }
+    }
+    .learning {
+      color: #FFFFFF;
+      text-align: center;
+      margin-top: 50px;
+    }
+    
+    .footer {
+      color: #FFFFFF;
+      text-align: center;
+    }
+    .footer p a:active,
+    .footer p a:focus,
+    .footer p a:hover,
+    .footer p a:visited {
+      color: #FFFFFF;
+    }
+    
+    @keyframes show-box {
+      0% {
+        transform: rotate(0deg);
+      }
+      30% {
+        transform: rotate(-10deg);
+      }
+      70% {
+        transform: rotate(10deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+    </style>
+    <script>
+      window.console = window.console || function(t) {};
+    </script>
+    <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+      }
+    </script>
+    </head>
+    <body translate="no">
+    
+    <div class="title">
+    <h2>Daily CSS - Day 46 - <span>Pinata</span></h2>
+    </div>
+    <div class="box">
+    <div class="string"></div>
+    <div class="bow"></div>
+    <div class="egg">
+    <div class="container">
+    
+    <div class="text word-1"></div>
+    <div class="text word-2"></div>
+    <div class="text word-3"></div>
+    <div class="text word-4"></div>
+    <div class="text word-5"></div>
+    <div class="text word-6"></div>
+    <div class="text word-7"></div>
+    <div class="text word-8"></div>
+    <div class="text word-9"></div>
+    <div class="text word-10"></div>
+    <div class="text word-11"></div>
+    <div class="text word-12"></div>
+    <div class="text word-13"></div>
+    <div class="text word-14"></div>
+    <div class="text word-15"></div>
+    <div class="text word-16"></div>
+    <div class="text word-17"></div>
+    <div class="text word-18"></div>
+    <div class="text word-19"></div>
+    <div class="text word-20"></div>
+    </div>
+    </div>
+    </div>
+    <div class="learning">
+    <h1>Good:</h1>
+    <p>- Randowm words are fun.</p>
+    <h1>Bad:</h1>
+    <p>- Not the pinata I hoped to design in the first place.</p>
+    <h1>Ugly:</h1>
+    <p>- I had to give up on previous designs to generate strips to look light paper.</p>
+    <p>- Also tried generating ciricle panes.</p>
+    <p>- both resulted in too many divs.</p>
+    </div>
+    <div class="footer">
+    <hr>
+    <p>
+    Page built by <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (SW | FW | Embedded | Web) 2017</em></p>
+    </div>
+    
+    
+    </body></html>

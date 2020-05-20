@@ -1,0 +1,273 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+    <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+    <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+    <title>CodePen - Daily CSS Day50 - Party City</title>
+    <style>
+    body {
+      background: #FFFFFF;
+      color: #FFFFFF;
+      font-family: sans-serif;
+    }
+    
+    .box {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      margin: auto;
+      background: none;
+    }
+    
+    .title {
+      font-size: 1.5em;
+      text-align: center;
+      color: #000000;
+      margin-bottom: 0px;
+    }
+    
+    .title span {
+      color: #000000;
+    }
+    
+    .container1 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      left: 0%;
+      margin: auto;
+      animation: show-top 5s linear 0s 1 normal forwards running;
+    }
+    
+    .container2 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 50%;
+      left: 8%;
+      margin: auto;
+      animation: show-bottom 5s linear 0s 1 normal forwards running;
+    }
+    
+    .letter1 {
+      position: absolute;
+      width: 10%;
+      height: 10%;
+      font-size: 10em;
+      font-weight: bold;
+      text-shadow: -4px -4px 4px #000000, 4px -4px 4px #000000, -4px 4px 4px #000000, 4px 4px 4px #000000, 5px 27px 20px #999999, 0px 24px 20px #1a1a1a;
+      top: 0%;
+      left: 0%;
+      color: red;
+    }
+    
+    .letter2 {
+      position: absolute;
+      width: 10%;
+      height: 10%;
+      font-size: 10em;
+      font-weight: bold;
+      text-shadow: -4px -4px 4px #000000, 4px -4px 4px #000000, -4px 4px 4px #000000, 4px 4px 4px #000000, 5px 27px 20px #999999, 0px 24px 20px #1a1a1a;
+      top: 0%;
+      left: 25%;
+      color: purple;
+    }
+    
+    .letter3 {
+      position: absolute;
+      width: 10%;
+      height: 10%;
+      font-size: 10em;
+      font-weight: bold;
+      text-shadow: -4px -4px 4px #000000, 4px -4px 4px #000000, -4px 4px 4px #000000, 4px 4px 4px #000000, 5px 27px 20px #999999, 0px 24px 20px #1a1a1a;
+      top: 0%;
+      left: 45%;
+      color: orange;
+    }
+    
+    .letter4 {
+      position: absolute;
+      width: 10%;
+      height: 10%;
+      font-size: 10em;
+      font-weight: bold;
+      text-shadow: -4px -4px 4px #000000, 4px -4px 4px #000000, -4px 4px 4px #000000, 4px 4px 4px #000000, 5px 27px 20px #999999, 0px 24px 20px #1a1a1a;
+      top: 0%;
+      left: 62%;
+      color: blue;
+    }
+    
+    .letter5 {
+      position: absolute;
+      width: 10%;
+      height: 10%;
+      font-size: 10em;
+      font-weight: bold;
+      text-shadow: -4px -4px 4px #000000, 4px -4px 4px #000000, -4px 4px 4px #000000, 4px 4px 4px #000000, 5px 27px 20px #999999, 0px 24px 20px #1a1a1a;
+      top: 0%;
+      left: 75%;
+      color: green;
+    }
+    
+    .letter6 {
+      position: absolute;
+      width: 10%;
+      height: 10%;
+      font-size: 10em;
+      font-weight: bold;
+      text-shadow: -4px -4px 4px #000000, 4px -4px 4px #000000, -4px 4px 4px #000000, 4px 4px 4px #000000, 5px 27px 20px #999999, 0px 24px 20px #1a1a1a;
+      top: 0%;
+      left: 0%;
+      color: red;
+    }
+    
+    .letter7 {
+      position: absolute;
+      width: 10%;
+      height: 10%;
+      font-size: 10em;
+      font-weight: bold;
+      text-shadow: -4px -4px 4px #000000, 4px -4px 4px #000000, -4px 4px 4px #000000, 4px 4px 4px #000000, 5px 27px 20px #999999, 0px 24px 20px #1a1a1a;
+      top: 0%;
+      left: 25%;
+      color: orange;
+    }
+    .letter7:before {
+      position: absolute;
+      content: '';
+      width: 25px;
+      height: 25px;
+      top: 68%;
+      left: 25%;
+      background-color: blue;
+    }
+    
+    .letter8 {
+      position: absolute;
+      width: 10%;
+      height: 10%;
+      font-size: 10em;
+      font-weight: bold;
+      text-shadow: -4px -4px 4px #000000, 4px -4px 4px #000000, -4px 4px 4px #000000, 4px 4px 4px #000000, 5px 27px 20px #999999, 0px 24px 20px #1a1a1a;
+      top: 0%;
+      left: 35%;
+      color: green;
+    }
+    
+    .letter9 {
+      position: absolute;
+      width: 10%;
+      height: 10%;
+      font-size: 10em;
+      font-weight: bold;
+      text-shadow: -4px -4px 4px #000000, 4px -4px 4px #000000, -4px 4px 4px #000000, 4px 4px 4px #000000, 5px 27px 20px #999999, 0px 24px 20px #1a1a1a;
+      top: 0%;
+      left: 48%;
+      color: purple;
+    }
+    
+    .letter0 {
+      position: absolute;
+      width: 10%;
+      height: 10%;
+      font-size: 10em;
+      font-weight: bold;
+      text-shadow: -4px -4px 4px #000000, 4px -4px 4px #000000, -4px 4px 4px #000000, 4px 4px 4px #000000, 5px 27px 20px #999999, 0px 24px 20px #1a1a1a;
+      top: 0%;
+      left: 67%;
+      color: orange;
+    }
+    
+    .learning {
+      color: #000000;
+      text-align: center;
+      margin-top: 0px;
+      z-index: 2;
+    }
+    
+    .footer {
+      color: #000000;
+      text-align: center;
+    }
+    .footer p a:active,
+    .footer p a:focus,
+    .footer p a:hover,
+    .footer p a:visited {
+      color: #000000;
+    }
+    
+    @keyframes show-top {
+      0% {
+        transform: translate(-1000px, 0);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+    @keyframes show-bottom {
+      0% {
+        transform: translate(1000px, 0);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+    </style>
+    <script>
+      window.console = window.console || function(t) {};
+    </script>
+    <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+      }
+    </script>
+    </head>
+    <body translate="no">
+    
+    <div class="title">
+    <h2>Daily CSS - Day 50 - <span>Party City</span></h2>
+    </div>
+    <div class="box">
+    <div class="container1">
+    <div class="letter1">P</div>
+    <div class="letter2">a</div>
+    <div class="letter3">r</div>
+    <div class="letter4">t</div>
+    <div class="letter5">y</div>
+    </div>
+    <div class="container2">
+    <div class="letter6">C</div>
+    <div class="letter7">i</div>
+    <div class="letter8">t</div>
+    <div class="letter9">y</div>
+    <div class="letter0">!</div>
+    </div>
+    </div>
+    <div class="learning">
+    <h1>Good:</h1>
+    <p>- This particular challenge was easy...after doing the previous 49.</p>
+    <p>- Learned about text shadows this time.</p>
+    <p>- Glad I took this challenge. Took me 55 days :(</p>
+    <p>- This was a fun way to learn basic CSS techniques.</p>
+    <p>- Also an eye-opener to what is possible with complex CSS.</p>
+    <p>- Happy with my way to organize the HTML/Pug and CSS/SCSS.</p>
+    <p>- Clean code organization really helped do chnallenges quicker.</p>
+    <p>- Wonder if a prettifier plugin is out there (or write myself)</p>
+    <p>- Hope to take the SVG daily challenge soon. CSS is hard, but I think SVG is more difficult.</p>
+    <h1>Bad:</h1>
+    <p>- Should have made changed dot on the i to a circle...but I know how to do it.</p>
+    <p>- Really didn't pay attention to non-Chrome browsers.</p>
+    <h1>Ugly:</h1>
+    <p>- I have estimated locations using trial/error. Wish I would have figured out more accurate technique.</p>
+    <p>- I still struggle with units, when to use % vs hard coded px values.</p>
+    </div>
+    <div class="footer">
+    <hr>
+    <p>
+    Page built by <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (SW | FW | Embedded | Web) 2017</em></p>
+    </div>
+    
+    
+    </body></html>

@@ -1,0 +1,516 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+    <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+    <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+    <title>CodePen - Daily CSS Day49 - Dance</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+    body {
+      background: #000000;
+      color: #000000;
+      font-family: sans-serif;
+    }
+    
+    .box {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      margin: auto;
+      background: none;
+    }
+    
+    .title {
+      font-size: 1.5em;
+      text-align: center;
+      color: #FFFFFF;
+      margin-bottom: 0px;
+    }
+    
+    .title span {
+      color: #FFFFFF;
+    }
+    
+    .mat {
+      position: absolute;
+      width: 85%;
+      height: 95%;
+      top: 0%;
+      left: 8%;
+      margin: auto;
+      background: #cccccc;
+      border-radius: 1em;
+      border: solid 1px #cccccc;
+      overflow: hidden;
+    }
+    
+    .controls {
+      position: absolute;
+      width: 100%;
+      height: 15%;
+      top: 0%;
+      left: 0%;
+      margin: auto;
+      background: #000000;
+      overflow: hidden;
+    }
+    
+    .hex-thing-back {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      box-shadow: 0px 0px 20px 30px #999999;
+      top: 20%;
+      left: 47%;
+      margin: auto;
+      background: #999999;
+      transform: scale(1.2, 1);
+    }
+    
+    .hex-thing {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      top: -80%;
+      left: 39%;
+      margin: auto;
+      background: #000000;
+      clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+    }
+    .hex-thing:before {
+      position: absolute;
+      top: 75%;
+      left: 40%;
+      content: 'W';
+      color: #999999;
+      font-weight: 900;
+      font-size: 1em;
+    }
+    .hex-thing:after {
+      position: absolute;
+      content: '';
+      width: 70%;
+      height: 70%;
+      top: 0%;
+      left: 15%;
+      margin: auto;
+      background: #1a1a1a;
+      clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+    }
+    
+    .select {
+      position: absolute;
+      width: 10%;
+      height: 20%;
+      top: 30%;
+      left: 10%;
+      margin: auto;
+      background: purple;
+      border: solid 1px #FFFFFF;
+      border-radius: 1em;
+    }
+    .select:before {
+      position: absolute;
+      top: 140%;
+      left: -30%;
+      content: 'SELECT';
+      color: #FFFFFF;
+    }
+    
+    .start {
+      position: absolute;
+      width: 10%;
+      height: 20%;
+      top: 30%;
+      left: 80%;
+      margin: auto;
+      background: blue;
+      border: solid 1px #FFFFFF;
+      border-radius: 1em;
+    }
+    .start:before {
+      position: absolute;
+      top: 140%;
+      left: -10%;
+      content: 'START';
+      color: #FFFFFF;
+    }
+    
+    .arrow-blue {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      left: 0%;
+      margin: auto;
+      background: blue;
+      overflow: hidden;
+      transform: scale(0.8, 0.8) rotate(-45deg);
+    }
+    .arrow-blue:before {
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 20px;
+      top: 20%;
+      left: 37%;
+      background: #000033;
+      border-radius: 50%;
+      box-shadow: 0px 0px 20px 25px #000033;
+    }
+    
+    .arrow-purple {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      left: 0%;
+      margin: auto;
+      background: purple;
+      overflow: hidden;
+      transform: scale(0.8, 0.8) rotate(-45deg);
+      transform: scale(0.8, 0.8) rotate(45deg);
+    }
+    .arrow-purple:before {
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 20px;
+      top: 20%;
+      left: 37%;
+      background: black;
+      border-radius: 50%;
+      box-shadow: 0px 0px 20px 25px black;
+    }
+    
+    .arrow-up {
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      margin: auto;
+      background: none;
+      overflow: hidden;
+      top: 18%;
+      left: 40%;
+      transform: scale(1.4, 1.4) rotate(45deg);
+    }
+    .arrow-up i {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: 25%;
+      left: 15%;
+      color: #FFFFFF;
+      font-size: 3em;
+      transform: rotate(-45deg);
+    }
+    
+    .arrow-down {
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      margin: auto;
+      background: none;
+      overflow: hidden;
+      top: 72%;
+      left: 40%;
+      transform: scale(1.4, -1.4) rotate(45deg);
+    }
+    .arrow-down i {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: 25%;
+      left: 15%;
+      color: #FFFFFF;
+      font-size: 3em;
+      transform: rotate(-45deg);
+    }
+    
+    .arrow-left {
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      margin: auto;
+      background: none;
+      overflow: hidden;
+      top: 45%;
+      left: 12%;
+      transform: scale(-1.4, 1.4) rotate(45deg);
+    }
+    .arrow-left i {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: 25%;
+      left: 15%;
+      color: #FFFFFF;
+      font-size: 3em;
+      transform: rotate(-45deg);
+    }
+    
+    .arrow-right {
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      margin: auto;
+      background: none;
+      overflow: hidden;
+      top: 45%;
+      left: 68%;
+      transform: scale(1.4, 1.4) rotate(45deg);
+    }
+    .arrow-right i {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: 25%;
+      left: 15%;
+      color: #FFFFFF;
+      font-size: 3em;
+      transform: rotate(-45deg);
+    }
+    
+    .symbol-x {
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      margin: auto;
+      background: #000000;
+      border-radius: 1em;
+      overflow: hidden;
+      top: 18%;
+      left: 12%;
+    }
+    .symbol-x:before {
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 20px;
+      top: 35%;
+      left: 37%;
+      background: #b3b3b3;
+      border-radius: 50%;
+      box-shadow: 0px 0px 20px 20px #b3b3b3;
+    }
+    .symbol-x i {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 30%;
+      left: 37%;
+      color: #000000;
+      font-weight: bold;
+      font-size: 2em;
+    }
+    
+    .symbol-o {
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      margin: auto;
+      background: #000000;
+      border-radius: 1em;
+      overflow: hidden;
+      top: 18%;
+      left: 68%;
+    }
+    .symbol-o:before {
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 20px;
+      top: 35%;
+      left: 37%;
+      background: #b3b3b3;
+      border-radius: 50%;
+      box-shadow: 0px 0px 20px 20px #b3b3b3;
+    }
+    .symbol-o i {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 30%;
+      left: 37%;
+      color: #000000;
+      font-weight: bold;
+      font-size: 2em;
+    }
+    
+    .symbol-triangle {
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      margin: auto;
+      background: #000000;
+      border-radius: 1em;
+      overflow: hidden;
+      top: 72%;
+      left: 12%;
+    }
+    .symbol-triangle:before {
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 20px;
+      top: 35%;
+      left: 37%;
+      background: #b3b3b3;
+      border-radius: 50%;
+      box-shadow: 0px 0px 20px 20px #b3b3b3;
+    }
+    .symbol-triangle i {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 30%;
+      left: 37%;
+      color: #000000;
+      font-weight: bold;
+      font-size: 2em;
+    }
+    
+    .symbol-square {
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      margin: auto;
+      background: #000000;
+      border-radius: 1em;
+      overflow: hidden;
+      top: 72%;
+      left: 68%;
+    }
+    .symbol-square:before {
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 20px;
+      top: 35%;
+      left: 37%;
+      background: #b3b3b3;
+      border-radius: 50%;
+      box-shadow: 0px 0px 20px 20px #b3b3b3;
+    }
+    .symbol-square i {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 30%;
+      left: 37%;
+      color: #000000;
+      font-weight: bold;
+      font-size: 2em;
+    }
+    
+    .center {
+      position: absolute;
+      width: 35%;
+      height: 35%;
+      top: 37%;
+      left: 32%;
+      margin: auto;
+      background: #000000;
+      border: solid 2px #FFFFFF;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .center img {
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      left: 0%;
+      transform: scale(2.2, 3.6) translate(-14px, -4px);
+    }
+    
+    .learning {
+      color: #FFFFFF;
+      text-align: center;
+      margin-top: 0px;
+      z-index: 2;
+    }
+    
+    .footer {
+      color: #FFFFFF;
+      text-align: center;
+    }
+    .footer p a:active,
+    .footer p a:focus,
+    .footer p a:hover,
+    .footer p a:visited {
+      color: #FFFFFF;
+    }
+    
+    /*
+    @keyframes show-string1 {
+        0%  { transform: translate(0, 0); }
+       10%  { transform: translate(0, 0); }
+       40%  { transform: translate(0, -150px); }
+      100%  { transform: translate(0, -150px); }
+    }
+    */
+    </style>
+    <script>
+      window.console = window.console || function(t) {};
+    </script>
+    <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+      }
+    </script>
+    </head>
+    <body translate="no">
+    
+    <div class="title">
+    <h2>Daily CSS - Day 49 - <span>Dance</span></h2>
+    </div>
+    <div class="box">
+    <div class="mat">
+    <div class="controls">
+    <div class="hex-thing-back"></div>
+    <div class="hex-thing"></div>
+    <div class="select"></div>
+    <div class="start"></div>
+    </div>
+    </div>
+    <div class="arrow-up">
+    <div class="arrow-blue"></div><i class="fa fa-arrow-circle-up"></i>
+    </div>
+    <div class="arrow-down">
+    <div class="arrow-blue"></div><i class="fa fa-arrow-circle-up"></i>
+    </div>
+    <div class="arrow-left">
+    <div class="arrow-purple"></div><i class="fa fa-arrow-circle-right"></i>
+    </div>
+    <div class="arrow-right">
+    <div class="arrow-purple"></div><i class="fa fa-arrow-circle-right"></i>
+    </div>
+    <div class="symbol-x"><i class="fa fa-close"></i></div>
+    <div class="symbol-o"><i class="fa fa-circle-o"></i></div>
+    <div class="symbol-triangle"><i class="fa fa-question"></i></div>
+    <div class="symbol-square"><i class="fa fa-square-o"></i></div>
+    <div class="center"><img src="https://ae01.alicdn.com/kf/HTB1rJ3LJVXXXXcmXVXXq6xXFXXXU/5pcs-Non-Slip-font-b-Dance-b-font-Revolution-Dancing-font-b-Pad-b-font-Mat.jpg" style="width: 200px"></div>
+    </div>
+    <div class="learning">
+    <h1>Good:</h1>
+    <p>- Happy with how quickly I able to build complex shapes.</p>
+    <p>- Happy with how I could re-use the original center image.</p>
+    <p>- Original:</p>
+    <p><img src="https://ae01.alicdn.com/kf/HTB1rJ3LJVXXXXcmXVXXq6xXFXXXU/5pcs-Non-Slip-font-b-Dance-b-font-Revolution-Dancing-font-b-Pad-b-font-Mat.jpg" style="width: 200px"></p>
+    <h1>Bad:</h1>
+    <p>- Eyeballed many of the the position values.</p>
+    <p>- Looking close shows symmetry is off.</p>
+    <p>- used font-awesome and couldn't match all symbols</p>
+    <h1>Ugly:</h1>
+    <p>- Did I take too many 'artist' shortcuts?</p>
+    </div>
+    <div class="footer">
+    <hr>
+    <p>
+    Page built by <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (SW | FW | Embedded | Web) 2017</em></p>
+    </div>
+    
+    
+    </body></html>
