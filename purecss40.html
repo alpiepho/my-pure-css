@@ -1,0 +1,715 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <title>CodePen - Daily CSS Day40 - Nintendo 2DS</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <style>
+  body {
+    background: #404040;
+    color: #FFFFFF;
+    font-family: sans-serif;
+  }
+  
+  .box {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    background: none;
+    animation: show-box 10s linear 0s infinite normal forwards running;
+  }
+  
+  .title {
+    font-size: 1.5em;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 60px;
+  }
+  
+  .title span {
+    color: #FFFFFF;
+  }
+  
+  .outside {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    margin: auto;
+    background: #B2373A;
+    border: solid 2px #000000;
+    border-radius: 5em 5em 1em 1em;
+    background: linear-gradient(to left top, #B2373A 0%, #d6797c 100%);
+  }
+  
+  .speaker {
+    position: absolute;
+    width: 15%;
+    height: 15%;
+    top: 5%;
+    left: 2%;
+    margin: auto;
+    background: none;
+    overflow: hidden;
+  }
+  
+  .holes-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    margin: auto;
+    background-color: transparent;
+    background-image: radial-gradient(black 20%, transparent 21%), radial-gradient(black 20%, transparent 21%);
+    background-size: 20px 20px;
+    background-position: 5px 5px, 5px 5px;
+    transform: scale(0.6, 0.6);
+  }
+  
+  .camera {
+    position: absolute;
+    width: 8%;
+    height: 8%;
+    top: 5%;
+    left: 43%;
+    margin: auto;
+    background: #000000;
+    border-radius: 50%;
+  }
+  .camera:before {
+    position: absolute;
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 22%;
+    left: 25%;
+    margin: auto;
+    background: #4d4d4d;
+    border-radius: 50%;
+  }
+  
+  .led1 {
+    position: absolute;
+    width: 5%;
+    height: 3%;
+    top: 12%;
+    left: 80%;
+    margin: auto;
+    background: #666666;
+    border-radius: 5em;
+    border: solid 2px #333333;
+  }
+  
+  .round {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    top: 30%;
+    left: 2%;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(to right bottom, #B2373A 30%, #e2a0a2 100%);
+  }
+  .round:before {
+    position: absolute;
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(to left top, #B2373A 30%, #e2a0a2 100%);
+  }
+  
+  .round-inner {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 19%;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(to left top, #404040 30%, #8d8d8d 100%);
+  }
+  .round-inner:before {
+    position: absolute;
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(to right bottom, #404040 30%, #8d8d8d 100%);
+  }
+  
+  .screen1 {
+    position: absolute;
+    width: 45%;
+    height: 34%;
+    top: 18%;
+    left: 27%;
+    margin: auto;
+    border-radius: 0.4em;
+    background: linear-gradient(to left top, #641f21 0%, #9f3134 100%);
+  }
+  .screen1:before {
+    position: absolute;
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    margin: auto;
+    background: linear-gradient(to left top, #404040 70%, #8d8d8d 100%);
+  }
+  
+  .xbutton {
+    position: absolute;
+    width: 8%;
+    height: 8%;
+    top: 32%;
+    left: 82%;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(to left top, #e2a0a2 30%, #d6797c 100%);
+    top: 28%;
+    left: 82%;
+  }
+  .xbutton:before {
+    position: absolute;
+    content: '';
+    width: 90%;
+    height: 90%;
+    top: 6%;
+    left: 5%;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(to right bottom, #d6797c 5%, #B2373A 100%);
+  }
+  .xbutton:after {
+    position: absolute;
+    content: '';
+    content: 'X';
+    color: #404040;
+    text-align: center;
+    width: 90%;
+    height: 90%;
+    top: 20%;
+    left: 5%;
+  }
+  .xbutton:after {
+    content: 'X';
+  }
+  
+  .ybutton {
+    position: absolute;
+    width: 8%;
+    height: 8%;
+    top: 32%;
+    left: 82%;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(to left top, #e2a0a2 30%, #d6797c 100%);
+    top: 35%;
+    left: 74%;
+  }
+  .ybutton:before {
+    position: absolute;
+    content: '';
+    width: 90%;
+    height: 90%;
+    top: 6%;
+    left: 5%;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(to right bottom, #d6797c 5%, #B2373A 100%);
+  }
+  .ybutton:after {
+    position: absolute;
+    content: '';
+    content: 'X';
+    color: #404040;
+    text-align: center;
+    width: 90%;
+    height: 90%;
+    top: 20%;
+    left: 5%;
+  }
+  .ybutton:after {
+    content: 'Y';
+  }
+  
+  .abutton {
+    position: absolute;
+    width: 8%;
+    height: 8%;
+    top: 32%;
+    left: 82%;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(to left top, #e2a0a2 30%, #d6797c 100%);
+    top: 35%;
+    left: 90%;
+  }
+  .abutton:before {
+    position: absolute;
+    content: '';
+    width: 90%;
+    height: 90%;
+    top: 6%;
+    left: 5%;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(to right bottom, #d6797c 5%, #B2373A 100%);
+  }
+  .abutton:after {
+    position: absolute;
+    content: '';
+    content: 'X';
+    color: #404040;
+    text-align: center;
+    width: 90%;
+    height: 90%;
+    top: 20%;
+    left: 5%;
+  }
+  .abutton:after {
+    content: 'A';
+  }
+  
+  .bbutton {
+    position: absolute;
+    width: 8%;
+    height: 8%;
+    top: 32%;
+    left: 82%;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(to left top, #e2a0a2 30%, #d6797c 100%);
+    top: 42%;
+    left: 82%;
+  }
+  .bbutton:before {
+    position: absolute;
+    content: '';
+    width: 90%;
+    height: 90%;
+    top: 6%;
+    left: 5%;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(to right bottom, #d6797c 5%, #B2373A 100%);
+  }
+  .bbutton:after {
+    position: absolute;
+    content: '';
+    content: 'X';
+    color: #404040;
+    text-align: center;
+    width: 90%;
+    height: 90%;
+    top: 20%;
+    left: 5%;
+  }
+  .bbutton:after {
+    content: 'B';
+  }
+  
+  .cross {
+    position: absolute;
+    width: 6%;
+    height: 15%;
+    top: 58%;
+    left: 9%;
+    margin: auto;
+    border-radius: 0.4em;
+    background: #000000;
+  }
+  .cross:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    margin: auto;
+    border-radius: 0.4em;
+    background: #000000;
+    transform: rotate(90deg);
+  }
+  
+  .cross-inner {
+    position: absolute;
+    width: 6%;
+    height: 15%;
+    top: 58%;
+    left: 9%;
+    margin: auto;
+    border-radius: 0.4em;
+    background: #000000;
+    transform: scale(0.9, 0.9);
+    background: linear-gradient(to right bottom, #d6797c 5%, #B2373A 100%);
+  }
+  .cross-inner:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    margin: auto;
+    border-radius: 0.4em;
+    background: #000000;
+    transform: rotate(90deg);
+  }
+  .cross-inner:before {
+    background: linear-gradient(to right bottom, #d6797c 5%, #B2373A 100%);
+  }
+  
+  .screen2 {
+    position: absolute;
+    width: 40%;
+    height: 30%;
+    top: 58%;
+    left: 30%;
+    margin: auto;
+    border-radius: 0.4em;
+    background: linear-gradient(to left top, #641f21 0%, #9f3134 100%);
+  }
+  .screen2:before {
+    position: absolute;
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    margin: auto;
+    background: linear-gradient(to left top, #404040 70%, #8d8d8d 100%);
+  }
+  
+  .start {
+    position: absolute;
+    width: 8%;
+    height: 8%;
+    top: 32%;
+    left: 82%;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(to left top, #e2a0a2 30%, #d6797c 100%);
+    top: 62%;
+    left: 74%;
+    transform: scale(0.7, 0.7);
+  }
+  .start:before {
+    position: absolute;
+    content: '';
+    width: 90%;
+    height: 90%;
+    top: 6%;
+    left: 5%;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(to right bottom, #d6797c 5%, #B2373A 100%);
+  }
+  .start:after {
+    position: absolute;
+    content: '';
+    content: 'X';
+    color: #404040;
+    text-align: center;
+    width: 90%;
+    height: 90%;
+    top: 20%;
+    left: 5%;
+  }
+  .start:after {
+    content: 'START';
+    top: 20%;
+    left: 120%;
+  }
+  
+  .select {
+    position: absolute;
+    width: 8%;
+    height: 8%;
+    top: 32%;
+    left: 82%;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(to left top, #e2a0a2 30%, #d6797c 100%);
+    top: 70%;
+    left: 74%;
+    transform: scale(0.7, 0.7);
+  }
+  .select:before {
+    position: absolute;
+    content: '';
+    width: 90%;
+    height: 90%;
+    top: 6%;
+    left: 5%;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(to right bottom, #d6797c 5%, #B2373A 100%);
+  }
+  .select:after {
+    position: absolute;
+    content: '';
+    content: 'X';
+    color: #404040;
+    text-align: center;
+    width: 90%;
+    height: 90%;
+    top: 20%;
+    left: 5%;
+  }
+  .select:after {
+    content: 'SELECT';
+    top: 20%;
+    left: 120%;
+  }
+  
+  .mic {
+    position: absolute;
+    width: 8%;
+    height: 8%;
+    top: 32%;
+    left: 82%;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(to left top, #e2a0a2 30%, #d6797c 100%);
+    width: 2%;
+    height: 2%;
+    top: 80%;
+    left: 10%;
+    background: none;
+    transform: scale(0.7, 0.7);
+  }
+  .mic:before {
+    position: absolute;
+    content: '';
+    width: 90%;
+    height: 90%;
+    top: 6%;
+    left: 5%;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(to right bottom, #d6797c 5%, #B2373A 100%);
+  }
+  .mic:after {
+    position: absolute;
+    content: '';
+    content: 'X';
+    color: #404040;
+    text-align: center;
+    width: 90%;
+    height: 90%;
+    top: 20%;
+    left: 5%;
+  }
+  .mic:before {
+    background: #000000;
+    top: -80%;
+    left: 120%;
+  }
+  .mic:after {
+    content: 'MIC';
+    top: 120%;
+    left: 10%;
+  }
+  
+  .home {
+    position: absolute;
+    top: 90%;
+    left: 42%;
+    width: 12%;
+    height: 8%;
+    border-radius: 5em;
+    background: #B2373A;
+    border: solid 1px #404040;
+  }
+  
+  i.fa-home {
+    position: absolute;
+    top: 91%;
+    left: 45%;
+    color: #8d8d8d;
+    font-size: 1.5em;
+  }
+  
+  .led2 {
+    position: absolute;
+    width: 2%;
+    height: 2%;
+    top: 82%;
+    left: 85%;
+    margin: auto;
+    background: #666666;
+    border-radius: 5em;
+  }
+  
+  .power {
+    position: absolute;
+    width: 8%;
+    height: 8%;
+    top: 32%;
+    left: 82%;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(to left top, #e2a0a2 30%, #d6797c 100%);
+    top: 85%;
+    left: 74%;
+  }
+  .power:before {
+    position: absolute;
+    content: '';
+    width: 90%;
+    height: 90%;
+    top: 6%;
+    left: 5%;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(to right bottom, #d6797c 5%, #B2373A 100%);
+  }
+  .power:after {
+    position: absolute;
+    content: '';
+    content: 'X';
+    color: #404040;
+    text-align: center;
+    width: 90%;
+    height: 90%;
+    top: 20%;
+    left: 5%;
+  }
+  .power:after {
+    content: '';
+  }
+  
+  i.fa-power-off {
+    position: absolute;
+    top: 87%;
+    left: 76%;
+    color: #641f21;
+  }
+  
+  .led3 {
+    position: absolute;
+    width: 2%;
+    height: 2%;
+    top: 88%;
+    left: 85%;
+    margin: auto;
+    background: #999999;
+    border-radius: 5em;
+  }
+  
+  .learning {
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .footer {
+    color: #FFFFFF;
+    text-align: center;
+  }
+  .footer p a:active,
+  .footer p a:focus,
+  .footer p a:hover,
+  .footer p a:visited {
+    color: #FFFFFF;
+  }
+  
+  /*
+  */
+  /*
+  @keyframes show-box1 {
+     0%   { opacity: 0.0; }
+    20%   { opacity: 0.0; }
+    20.1%   { opacity: 1.0; }
+    90%   { opacity: 1.0; }
+    91%   { opacity: 0.0; }
+    100%  { opacity: 0.0; }
+  }
+  */
+  </style>
+  <script>
+    window.console = window.console || function(t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  </head>
+  <body translate="no">
+  
+  <div class="title">
+  <h2>Daily CSS - Day 40 - <span>Nintendo 2DS</span></h2>
+  </div>
+  <div class="box">
+  <div class="outside">
+  <div class="speaker">
+  <div class="holes-pattern"></div>
+  </div>
+  <div class="camera"></div>
+  <div class="led1"></div>
+  <div class="round">
+  <div class="round-inner"></div>
+  </div>
+  <div class="screen1"></div>
+  <div class="xbutton"></div>
+  <div class="ybutton"></div>
+  <div class="abutton"></div>
+  <div class="bbutton"></div>
+  <div class="cross"></div>
+  <div class="cross-inner"></div>
+  <div class="screen2"></div>
+  <div class="start"></div>
+  <div class="select"></div>
+  <div class="mic"></div>
+  <div class="home"></div><i class="fa fa-home"></i>
+  <div class="power"></div><i class="fa fa-power-off"></i>
+  <div class="power-icon"></div>
+  <div class="led2"></div>
+  <div class="led3"></div>
+  <div class="sleep"></div>
+  <div class="slider"></div>
+  </div>
+  </div>
+  <div class="learning">
+  <h1>Good:</h1>
+  <p>
+  - modeled after <a href="https://imgur.com/TwlymMM" style="color: white">this</a> image.</p>
+  <p>- lots of practice with multiple types of shapes.</p>
+  <p>- happy with making mixins for buttons.</p>
+  <h1>Bad:</h1>
+  <p>- Took a long time for the 20+ shapes.</p>
+  <p>- Could have tuned the shading better to match image I referenced.</p>
+  <p>- I should have built new component for Mic instead of hacking button.</p>
+  <h1>Ugly:</h1>
+  <p>- the cross control is really ugly.</p>
+  <p>- left off the power icon, sleep label, and the slider button.</p>
+  <p>- ...and I don't play video game :(</p>
+  </div>
+  <div class="footer">
+  <hr>
+  <p>
+  Page built by <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (SW | FW | Embedded | Web) 2017</em></p>
+  </div>
+  
+  
+  </body></html>

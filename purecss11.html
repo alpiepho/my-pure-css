@@ -1,0 +1,291 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <title>CodePen - Daily CSS Day11 - Pizza</title>
+  <style>
+  body {
+    background: #EBD09B;
+    color: #FFFFFF;
+    font-family: sans-serif;
+  }
+  
+  .title {
+    position: relative;
+    left: 25%;
+    top: -8%;
+    display: block;
+    margin: auto;
+    font-size: 2em;
+    color: #000000;
+  }
+  
+  .box {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    display: block;
+    margin: auto;
+    margin-top: 0%;
+    background: none;
+    overflow: hidden;
+  }
+  
+  .pizza-slice1 {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 20%;
+    height: 20%;
+    transform-origin: bottom center;
+    transform: rotate(0deg) scale(2, 2);
+  }
+  
+  .pizza-slice2 {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 20%;
+    height: 20%;
+    transform-origin: bottom center;
+    transform: rotate(36deg) scale(-2, 2);
+  }
+  
+  .pizza-slice3 {
+    position: absolute;
+    top: 18%;
+    left: 48%;
+    width: 20%;
+    height: 20%;
+    transform-origin: bottom center;
+    transform: rotate(72deg) scale(2, 2);
+  }
+  
+  .pizza-slice4 {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 20%;
+    height: 20%;
+    transform-origin: bottom center;
+    transform: rotate(108deg) scale(2, 2);
+  }
+  
+  .pizza-slice5 {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 20%;
+    height: 20%;
+    transform-origin: bottom center;
+    transform: rotate(140deg) scale(2, 2);
+  }
+  
+  .pizza-slice6 {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 20%;
+    height: 20%;
+    transform-origin: bottom center;
+    transform: rotate(176deg) scale(2, 2);
+  }
+  
+  .pizza-slice7 {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 20%;
+    height: 20%;
+    transform-origin: bottom center;
+    transform: rotate(213deg) scale(2, 2);
+  }
+  
+  .pizza-slice8 {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 20%;
+    height: 20%;
+    transform-origin: bottom center;
+    transform: rotate(250deg) scale(2, 2);
+  }
+  
+  .pizza-slice9 {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 20%;
+    height: 20%;
+    transform-origin: bottom center;
+    transform: rotate(287deg) scale(2, 2);
+  }
+  
+  .pizza-slice10 {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 20%;
+    height: 20%;
+    transform-origin: bottom center;
+    transform: rotate(324deg) scale(2, 2);
+  }
+  
+  .crust {
+    position: absolute;
+    top: 38%;
+    left: 8%;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 75px solid #D6934D;
+    border-radius: 50%;
+    transform-origin: bottom center;
+    clip-path: polygon(50% 100%, 25% 0, 75% 0);
+  }
+  
+  .cheese {
+    position: absolute;
+    top: 38%;
+    left: 8%;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 75px solid #FCC61A;
+    border-radius: 50%;
+    transform-origin: bottom center;
+    transform: scale(0.9, 0.9);
+    clip-path: polygon(50% 100%, 25% 0, 75% 0);
+  }
+  
+  .pep1 {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    background-color: #A82B2B;
+  }
+  
+  .pep2 {
+    position: absolute;
+    top: 62%;
+    left: 47%;
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    background-color: #A82B2B;
+  }
+  
+  .pep3 {
+    position: absolute;
+    top: 73%;
+    left: 45%;
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    background-color: #A82B2B;
+  }
+  
+  .footer {
+    color: #000000;
+  }
+  .footer p a:active,
+  .footer p a:focus,
+  .footer p a:hover,
+  .footer p a:visited {
+    color: #A82B2B;
+  }
+  </style>
+  <script>
+    window.console = window.console || function(t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  </head>
+  <body translate="no">
+  <div class="title"> Daily CSS - Day 11 - Pizza</div>
+  <div class="box">
+  <div class="pizza-slice1">
+  <div class="crust"></div>
+  <div class="cheese"></div>
+  <div class="pep1"></div>
+  <div class="pep2"></div>
+  <div class="pep3"></div>
+  </div>
+  <div class="pizza-slice2">
+  <div class="crust"></div>
+  <div class="cheese"></div>
+  <div class="pep1"></div>
+  <div class="pep2"></div>
+  </div>
+  <div class="pizza-slice3">
+  <div class="crust"></div>
+  <div class="cheese"></div>
+  <div class="pep1"></div>
+  <div class="pep2"></div>
+  <div class="pep3"></div>
+  </div>
+  <div class="pizza-slice4">
+  <div class="crust"></div>
+  <div class="cheese"></div>
+  <div class="pep1"></div>
+  <div class="pep2"></div>
+  </div>
+  <div class="pizza-slice5">
+  <div class="crust"></div>
+  <div class="cheese"></div>
+  <div class="pep1"></div>
+  <div class="pep2"></div>
+  <div class="pep3"></div>
+  </div>
+  <div class="pizza-slice6">
+  <div class="crust"></div>
+  <div class="cheese"></div>
+  <div class="pep1"></div>
+  <div class="pep2"></div>
+  </div>
+  <div class="pizza-slice7">
+  <div class="crust"></div>
+  <div class="cheese"></div>
+  <div class="pep1"></div>
+  <div class="pep2"></div>
+  <div class="pep3"></div>
+  </div>
+  <div class="pizza-slice8">
+  <div class="crust"></div>
+  <div class="cheese"></div>
+  <div class="pep1"></div>
+  <div class="pep2"></div>
+  </div>
+  <div class="pizza-slice9">
+  <div class="crust"></div>
+  <div class="cheese"></div>
+  <div class="pep1"></div>
+  <div class="pep2"></div>
+  <div class="pep3"></div>
+  </div>
+  <div class="pizza-slice10">
+  <div class="crust"></div>
+  <div class="cheese"></div>
+  <div class="pep1"></div>
+  <div class="pep2"></div>
+  </div>
+  </div>
+  <div class="footer">
+  <hr>
+  <p>Page built by
+  <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (Aspiring Full Stack Developer) 2017</em>
+  </p>
+  
+  
+  
+  </div></body></html>

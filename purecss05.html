@@ -1,0 +1,465 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <title>CodePen - Daily CSS Day05 - Dory</title>
+  <style>
+  body {
+    background: #0D498F;
+    font-family: sans-serif;
+  }
+  
+  .title {
+    position: relative;
+    left: 20%;
+    top: -8%;
+    display: block;
+    margin: auto;
+    font-size: 2em;
+  }
+  
+  .box {
+    position: relative;
+    width: 600px;
+    height: 420px;
+    display: block;
+    margin: auto;
+    margin-top: 8%;
+    background: none;
+  }
+  
+  .fin-outter {
+    position: absolute;
+    top: 0%;
+    left: -10%;
+    width: 0;
+    height: 0;
+    border-left: 72px solid transparent;
+    border-right: 72px solid transparent;
+    border-top: 83px solid #FFFF00;
+    border-radius: 50%;
+  }
+  
+  .fin-inner {
+    position: absolute;
+    top: 5%;
+    left: -10%;
+    width: 0;
+    height: 0;
+    border-left: 72px solid transparent;
+    border-right: 72px solid transparent;
+    border-top: 78px solid #3155A5;
+    border-radius: 50%;
+  }
+  
+  .tail {
+    position: absolute;
+    top: 25%;
+    left: 55%;
+    width: 20%;
+    height: 20%;
+    transform: scale(0.9, 1.5) rotate(70deg);
+    transform-origin: center center;
+    animation-name: show-tail;
+    animation-delay: 1s;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  
+  .fin-left {
+    position: absolute;
+    top: 55%;
+    left: 25%;
+    width: 20%;
+    height: 20%;
+    transform: rotate(-98deg) scale(0.5, 1);
+    transform-origin: center center;
+    animation-name: show-fin-left;
+    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  
+  .fin-right {
+    position: absolute;
+    top: 55%;
+    left: 53%;
+    width: 20%;
+    height: 20%;
+    transform: rotate(98deg) scale(0.5, 1);
+    transform-origin: center center;
+    animation-name: show-fin-right;
+    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  
+  .hair {
+    position: absolute;
+    top: 18%;
+    left: 41%;
+    width: 8%;
+    height: 12%;
+    border-radius: 50% 0 0 0;
+    background: #125BF8;
+    transform: rotate(-35deg);
+    transform-origin: top center;
+  }
+  
+  .body-back {
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    width: 30%;
+    height: 60%;
+    border-radius: 50%;
+    background: #3155A5;
+  }
+  
+  .body-front {
+    position: absolute;
+    top: 20%;
+    left: 33%;
+    width: 30%;
+    height: 60%;
+    border-radius: 50%;
+    background: #007DFE;
+  }
+  
+  .eye-outter {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #3155A5;
+  }
+  
+  .eye-inner1 {
+    position: absolute;
+    top: 0%;
+    left: -14%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #FFFFFF;
+  }
+  
+  .eye-inner2 {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background: #FECDFE;
+  }
+  
+  .eye-pupil {
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    background: #000000;
+  }
+  
+  .eye-shine-left {
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    background: #FFFFFF;
+  }
+  
+  .eye-shine-right {
+    position: absolute;
+    top: 65%;
+    left: 15%;
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    background: #FFFFFF;
+  }
+  
+  .eye-left {
+    position: absolute;
+    top: 35%;
+    left: 30%;
+    width: 15%;
+    height: 20%;
+    transform-origin: center center;
+  }
+  
+  .eye-right {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    width: 15%;
+    height: 20%;
+    transform: scale(-1);
+    transform-origin: center center;
+  }
+  
+  .mouth {
+    position: absolute;
+    top: 65%;
+    left: 41%;
+    width: 12%;
+    height: 8%;
+    border-radius: 0 0 50% 50%;
+    background: #000000;
+    transform-origin: top center;
+  }
+  
+  .mouth-teeth {
+    position: absolute;
+    top: 00%;
+    left: 25%;
+    width: 50%;
+    height: 20%;
+    border-radius: 0 0 50% 50%;
+    background: #FFFFFF;
+    transform-origin: top center;
+  }
+  
+  .mouth-tongue {
+    position: absolute;
+    top: 70%;
+    left: 25%;
+    width: 50%;
+    height: 20%;
+    border-radius: 50%;
+    background: #E15728;
+    transform-origin: top center;
+  }
+  
+  .bubble {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #FFFFFF;
+  }
+  
+  .bubble1 {
+    position: absolute;
+    top: 25%;
+    left: 18%;
+    width: 12%;
+    height: 15%;
+    background: none;
+    transform: scale(0.5);
+    transform-origin: top center;
+    animation-name: show-bubbles;
+    animation-delay: 4s;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+  
+  .bubble2 {
+    position: absolute;
+    top: 35%;
+    left: 15%;
+    width: 12%;
+    height: 15%;
+    background: none;
+    transform: scale(0.35);
+    transform-origin: top center;
+    animation-name: show-bubbles;
+    animation-delay: 3s;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+  
+  .bubble3 {
+    position: absolute;
+    top: 43%;
+    left: 17%;
+    width: 12%;
+    height: 15%;
+    background: none;
+    transform: scale(0.25);
+    transform-origin: top center;
+    animation-name: show-bubbles;
+    animation-delay: 2s;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+  
+  .bubble4 {
+    position: absolute;
+    top: 52%;
+    left: 16%;
+    width: 12%;
+    height: 15%;
+    background: none;
+    transform: scale(0.15);
+    transform-origin: top center;
+    animation-name: show-bubbles;
+    animation-delay: 1s;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+  
+  .bubble5 {
+    position: absolute;
+    top: 57%;
+    left: 17%;
+    width: 12%;
+    height: 15%;
+    background: none;
+    transform: scale(0.08);
+    transform-origin: top center;
+    animation-name: show-bubbles;
+    animation-delay: 0s;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+  
+  .template1 {
+    position: absolute;
+    top: 65%;
+    left: 41%;
+    width: 12%;
+    height: 8%;
+    border-radius: 0 0 50% 50%;
+    background: #000000;
+    transform-origin: top center;
+  }
+  
+  .template2 {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #FFFFFF;
+  }
+  
+  @keyframes show-bubbles {
+    50% {
+      opacity: 0.0;
+    }
+    100% {
+      opacity: 1.0;
+    }
+  }
+  @keyframes show-tail {
+    25% {
+      transform: scale(0.9, 1.5) rotate(60deg);
+    }
+    50% {
+      transform: scale(0.9, 1.5) rotate(70deg);
+    }
+    75% {
+      transform: scale(0.9, 1.5) rotate(60deg);
+    }
+    100% {
+      transform: scale(0.9, 1.5) rotate(70deg);
+    }
+  }
+  @keyframes show-fin-left {
+    25% {
+      transform: rotate(-93deg) scale(0.5, 1);
+    }
+    50% {
+      transform: rotate(-100deg) scale(0.5, 1);
+    }
+    100% {
+      transform: rotate(-98deg) scale(0.5, 1);
+    }
+  }
+  @keyframes show-fin-right {
+    25% {
+      transform: rotate(93deg) scale(0.5, 1);
+    }
+    50% {
+      transform: rotate(100deg) scale(0.5, 1);
+    }
+    100% {
+      transform: rotate(98deg) scale(0.5, 1);
+    }
+  }
+  </style>
+  <script>
+    window.console = window.console || function(t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  </head>
+  <body translate="no">
+  <div class="box">
+  <div class="title">Daily CSS - Day 5 - Dory</div>
+  <div class="tail">
+  <div class="fin-outter"></div>
+  <div class="fin-inner"></div>
+  </div>
+  <div class="fin-left">
+  <div class="fin-outter"></div>
+  <div class="fin-inner"></div>
+  </div>
+  <div class="fin-right">
+  <div class="fin-outter"></div>
+  <div class="fin-inner"></div>
+  </div>
+  <div class="hair"></div>
+  <div class="body-back"></div>
+  <div class="body-front"></div>
+  <div class="eye-left">
+  <div class="eye-outter"></div>
+  <div class="eye-inner1"></div>
+  <div class="eye-inner2"></div>
+  <div class="eye-pupil">
+  <div class="eye-shine-left"></div>
+  </div>
+  </div>
+  <div class="eye-right">
+  <div class="eye-outter"></div>
+  <div class="eye-inner1"></div>
+  <div class="eye-inner2"></div>
+  <div class="eye-pupil">
+  <div class="eye-shine-right"></div>
+  </div>
+  </div>
+  <div class="mouth">
+  <div class="mouth-teeth"></div>
+  <div class="mouth-tongue"></div>
+  </div>
+  <div class="bubble1">
+  <div class="bubble"></div>
+  </div>
+  <div class="bubble2">
+  <div class="bubble"></div>
+  </div>
+  <div class="bubble3">
+  <div class="bubble"></div>
+  </div>
+  <div class="bubble4">
+  <div class="bubble"></div>
+  </div>
+  <div class="bubble5">
+  <div class="bubble"></div>
+  </div>
+  </div>
+  <div class="footer">
+  <hr>
+  <p>
+  Page built by <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (Aspiring Full Stack Developer) 2017</em></p>
+  </div>
+  
+  
+  </body></html>

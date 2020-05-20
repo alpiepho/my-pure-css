@@ -1,0 +1,319 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+    <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+    <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+    <title>CodePen - Daily CSS Day43 - Animal</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rozha+One">
+    <style>
+    body {
+      background: #000000;
+      color: #000000;
+      font-family: sans-serif;
+    }
+    
+    .box {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      margin: auto;
+      background: none;
+      overflow: hidden;
+    }
+    
+    .title {
+      font-size: 1.5em;
+      text-align: center;
+      color: #FFFFFF;
+      margin-bottom: 0px;
+    }
+    
+    .title span {
+      color: #FFFFFF;
+    }
+    
+    .ear-left {
+      position: absolute;
+      width: 15%;
+      height: 15%;
+      border-radius: 0.5em;
+      background: #FBDE18;
+      transform: rotate(45deg);
+      top: 25%;
+      left: 7.5%;
+    }
+    
+    .ear-right {
+      position: absolute;
+      width: 15%;
+      height: 15%;
+      border-radius: 0.5em;
+      background: #FBDE18;
+      transform: rotate(45deg);
+      top: 25%;
+      right: 7%;
+    }
+    
+    .edges {
+      position: absolute;
+      width: 55%;
+      height: 190%;
+      top: -55%;
+      left: 22.5%;
+      margin: auto;
+      border-radius: 50%;
+      overflow: hidden;
+      transform: scale(1.5, 1.5);
+    }
+    .edges:after {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 20%;
+      top: 40%;
+      left: -50%;
+      border-radius: inherit;
+      background: #FBDE18;
+    }
+    
+    .whisker1-left {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      z-index: 1;
+      top: 53%;
+      left: -63%;
+      border-left: solid 120px #000000;
+      transform: rotate(-20deg);
+    }
+    
+    .whisker2-left {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      z-index: 1;
+      top: 54%;
+      left: -60%;
+      border-left: solid 150px #000000;
+      transform: rotate(-22deg);
+    }
+    
+    .whisker3-left {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      z-index: 1;
+      top: 54%;
+      left: -55%;
+      border-left: solid 180px #000000;
+      transform: rotate(-28deg);
+    }
+    
+    .whisker1-right {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      z-index: 1;
+      top: 53%;
+      right: -63%;
+      border-left: solid 120px #000000;
+      transform: rotate(20deg) scale(-1, 1);
+    }
+    
+    .whisker2-right {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      z-index: 1;
+      top: 54%;
+      right: -60%;
+      border-left: solid 150px #000000;
+      transform: rotate(22deg) scale(-1, 1);
+    }
+    
+    .whisker3-right {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      z-index: 1;
+      top: 54%;
+      right: -55%;
+      border-left: solid 180px #000000;
+      transform: rotate(28deg) scale(-1, 1);
+    }
+    
+    .nose1 {
+      position: absolute;
+      background: #000000;
+      z-index: 1;
+      width: 40px;
+      height: 40px;
+      top: 50%;
+      left: 40%;
+      border-radius: 0.9em 0.5em 50% 0.5em;
+      transform: rotate(45deg);
+    }
+    
+    .nose2 {
+      position: absolute;
+      background: #000000;
+      z-index: 1;
+      width: 10px;
+      height: 40px;
+      top: 53%;
+      left: 47%;
+    }
+    
+    .nose3 {
+      position: absolute;
+      background: #000000;
+      z-index: 1;
+      width: 40px;
+      height: 40px;
+      top: 58%;
+      left: 40%;
+      transform: rotate(45deg);
+    }
+    
+    .eye-left {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #000000;
+      z-index: 1;
+      animation: show-blink 10s linear 0s infinite normal forwards running;
+      top: 45.5%;
+      left: 20%;
+    }
+    
+    .eye-right {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #000000;
+      z-index: 1;
+      animation: show-blink 10s linear 0s infinite normal forwards running;
+      top: 45.5%;
+      right: 20%;
+    }
+    
+    .label1 {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      color: #FBDE18;
+      font-family: 'Rozha One', serif;
+      top: 64%;
+      left: 12%;
+      font-size: 5em;
+      transform: scale(1.5, 1);
+    }
+    .label1::first-letter {
+      font-size: 140%;
+    }
+    
+    .label2 {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      color: #FBDE18;
+      font-family: 'Rozha One', serif;
+      top: 90%;
+      left: 68%;
+      font-size: 1.7em;
+      transform: scale(1.2, 1);
+    }
+    
+    .learning {
+      color: #FFFFFF;
+      text-align: center;
+      margin-top: -50px;
+    }
+    
+    .footer {
+      color: #FFFFFF;
+      text-align: center;
+    }
+    .footer p a:active,
+    .footer p a:focus,
+    .footer p a:hover,
+    .footer p a:visited {
+      color: #FFFFFF;
+    }
+    
+    @keyframes show-blink {
+      0% {
+        transform: scale(1, 1);
+      }
+      20% {
+        transform: scale(1, 1);
+      }
+      21% {
+        transform: scale(1, 0.1);
+      }
+      22% {
+        transform: scale(1, 1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+    </style>
+    <script>
+      window.console = window.console || function(t) {};
+    </script>
+    <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+      }
+    </script>
+    </head>
+    <body translate="no">
+    
+    <div class="title">
+    <h2>Daily CSS - Day 43 - <span>Animal</span></h2>
+    </div>
+    <div class="box">
+    <div class="ear-left"></div>
+    <div class="ear-right"></div>
+    <div class="edges">
+    <div class="whisker1-left"></div>
+    <div class="whisker2-left"></div>
+    <div class="whisker3-left"></div>
+    <div class="whisker1-right"></div>
+    <div class="whisker2-right"></div>
+    <div class="whisker3-right"></div>
+    <div class="nose1"></div>
+    <div class="nose2"></div>
+    <div class="nose3"></div>
+    <div class="eye-left"></div>
+    <div class="eye-right"></div>
+    </div>
+    
+    
+    </div>
+    <div class="learning">
+    <h1>Good:</h1>
+    <p>- Learned how to create rounded squares.</p>
+    <h1>Bad:</h1>
+    <p>- The whiskers have trailing effects on a mobile browser.</p>
+    <h1>Ugly:</h1>
+    <p>-...</p>
+    </div>
+    <div class="footer">
+    <hr>
+    <p>
+    Page built by <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (SW | FW | Embedded | Web) 2017</em></p>
+    </div>
+    
+    
+    </body></html>

@@ -1,0 +1,312 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <title>CodePen - Daily CSS Day17 - Zombie</title>
+  <style>
+  body {
+    background: #111111;
+    color: #FFFFFF;
+    font-family: sans-serif;
+  }
+  
+  .title {
+    font-size: 1.5em;
+    text-align: center;
+    color: #4C9F70;
+  }
+  
+  .box {
+    position: relative;
+    width: 600px;
+    height: 500px;
+    margin: auto;
+    background: none;
+    overflow: hidden;
+  }
+  
+  .grave {
+    position: absolute;
+    top: 250px;
+    left: 150px;
+    height: 300px;
+    width: 250px;
+    background: #000000;
+    -webkit-transform: skew(-60deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+  }
+  
+  .z-ears {
+    position: absolute;
+    top: 140px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #1b3727;
+  }
+  
+  .z-ear-left {
+    left: 210px;
+  }
+  
+  .z-ear-right {
+    right: 220px;
+  }
+  
+  .z-head {
+    position: absolute;
+    top: 100px;
+    left: 220px;
+    height: 150px;
+    width: 150px;
+    background: #4C9F70;
+    border-top-left-radius: 90% 100%;
+    border-top-right-radius: 90% 100%;
+    border-bottom-left-radius: 80% 70px;
+    border-bottom-right-radius: 80% 70px;
+    animation-name: show-zhead;
+    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  
+  .z-brain-hole {
+    position: absolute;
+    top: -30px;
+    left: 78px;
+    height: 70px;
+    width: 70px;
+    background: #111111;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .z-brains {
+    position: absolute;
+    top: 45%;
+    right: 65%;
+    width: 40%;
+    height: 40%;
+    background: #EA468A;
+    border-radius: 50%;
+    z-index: -3;
+    box-shadow: 10px 10px 0 0 #e62173, 20px 20px 0 0 #ee6ba1, 30px 30px 0 0 #da1969, 13px 4px 0 0 #c81760, 28px 16px 0 0 #ec5896;
+  }
+  
+  .z-eyes {
+    position: absolute;
+    top: 40%;
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+    background: #FFFFFF;
+  }
+  
+  .z-eye-left {
+    left: 10%;
+    box-shadow: 4px 2px 0 8px #000000;
+  }
+  .z-eye-left:before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 60%;
+    width: 30%;
+    height: 30%;
+    background: #000000;
+    border-radius: 50%;
+  }
+  
+  .z-eye-right {
+    right: 10%;
+    box-shadow: -4px 2px 0 8px #000000;
+  }
+  .z-eye-right:before {
+    position: absolute;
+    content: '';
+    top: 40%;
+    right: 60%;
+    width: 30%;
+    height: 30%;
+    background: #000000;
+    border-radius: 50%;
+  }
+  
+  .z-mouth {
+    position: absolute;
+    top: 120px;
+    left: 50px;
+    height: 80px;
+    width: 60px;
+    background: transparent;
+    border-left: solid 4px #000000;
+    transform: rotate(94deg);
+  }
+  .z-mouth div:nth-child(1) {
+    left: 22%;
+    width: 14px;
+    border-top: 14px solid #B5A530;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+  .z-mouth div:nth-child(2) {
+    left: 70%;
+    width: 18px;
+    border-top: 18px solid #B5A530;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
+    margin-top: 4px;
+    margin-bottom: 5px;
+    transform: rotate(4deg);
+  }
+  .z-mouth div:nth-child(3) {
+    top: 45%;
+    left: 45%;
+    width: 10px;
+    border-top: 17px solid #B5A530;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
+    transform: rotate(4deg);
+  }
+  
+  .z-neck {
+    position: absolute;
+    top: 248px;
+    left: 280px;
+    height: 80px;
+    width: 30px;
+    background: #4C9F70;
+  }
+  
+  .z-body {
+    position: absolute;
+    top: 300px;
+    left: 225px;
+    height: 200px;
+    width: 150px;
+    background: #4C9F70;
+    border-top-left-radius: 30px 60%;
+    border-top-right-radius: 30px 60%;
+    animation-name: show-zbody;
+    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  
+  .z-arm-left {
+    position: absolute;
+    top: 350px;
+    left: 250px;
+    height: 200px;
+    width: 15px;
+    background: #000000;
+    border-top-left-radius: 30px 60%;
+    border-top-right-radius: 50%;
+  }
+  
+  .z-arm-right {
+    position: absolute;
+    top: 350px;
+    left: 330px;
+    height: 200px;
+    width: 15px;
+    background: #000000;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 30px 60%;
+  }
+  
+  .grave-cover {
+    position: absolute;
+    top: 250px;
+    left: 350px;
+    height: 300px;
+    width: 250px;
+    background: #111111;
+    -webkit-transform: skew(-60deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+  }
+  
+  .footer {
+    color: #777777;
+    text-align: center;
+  }
+  .footer p a:active,
+  .footer p a:focus,
+  .footer p a:hover,
+  .footer p a:visited {
+    color: #4C9F70;
+  }
+  
+  @keyframes show-zhead {
+    10%, 30%, 50%, 70% {
+      transform: rotate(5deg);
+    }
+    20%, 40%, 60%, 80% {
+      transform: rotate(-5deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  @keyframes show-zbody {
+    10%, 30%, 50%, 70% {
+      transform: translate(2px, 0px);
+    }
+    20%, 40%, 60%, 80% {
+      transform: translate(-2px, 0px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  </style>
+  <script>
+    window.console = window.console || function(t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  </head>
+  <body translate="no">
+  <div class="title">
+  <h2>Daily CSS - Day 17 - Zombie</h2>
+  </div>
+  <div class="box">
+  <div class="grave"></div>
+  <div class="z-ears z-ear-left"></div>
+  <div class="z-ears z-ear-right"></div>
+  <div class="z-head">
+  <div class="z-brain-hole">
+  <div class="z-brains"></div>
+  </div>
+  <div class="z-eyes z-eye-left"></div>
+  <div class="z-eyes z-eye-right"></div>
+  <div class="z-mouth">
+  <div></div>
+  <div></div>
+  <div></div>
+  </div>
+  </div>
+  <div class="z-neck"></div>
+  <div class="z-body"></div>
+  <div class="z-arm-left"></div>
+  <div class="z-arm-right"></div>
+  <div class="grave-cover"></div>
+  </div>
+  <div class="footer">
+  <hr>
+  <p>
+  Page built by <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (Aspiring Full Stack Developer) 2017</em></p>
+  </div>
+  
+  
+  </body></html>

@@ -1,0 +1,326 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <title>CodePen - Daily CSS Day02 - Elephant</title>
+  <style>
+  /*
+  
+  #D6A2AD  - PASTAL PINK
+  #A4A9AD  - DARK MEDIUM GRAY
+  #C4CAD0  - LAVENDER GRAY
+  */
+  
+  body {
+    background: #EEEEEE;
+    font-family: sans-serif;
+  }
+  
+  .title {
+    position: relative;
+    margin: auto;
+    display: block; 
+    font-size: 2em;
+    left: 15%;
+    top: -8%;
+  }
+  
+  .box {
+    position: relative;
+    margin: auto;
+    display: block;
+    margin-top: 8%;
+    width: 600px;
+    height: 420px;
+    background: none;
+    /*optional background or border*/
+    /*
+    background: white;
+    border: solid 4px brown;
+    */
+  }
+  
+  .elephant {
+    position: absolute;
+    top: 16.5%;
+    left: 5%;
+    width: 70%;
+    height: 67%;
+    background: #A4A9AD;
+    border-radius: 50%;
+    border: solid 4px gray;
+  }
+  
+  .elephant-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #A4A9AD;
+    border-radius: 50%;
+    z-index: 3;
+  }
+  
+  .leg {
+    width: 12%;
+    height: 30%;
+    background: #A4A9AD;
+    border-radius: 0 0 5px 5px;
+    border: solid 4px gray;
+  }
+  
+  .back-leg1 {
+    position: absolute;
+    top: 80%;
+    left: 15%;
+  }
+  
+  .back-leg2 {
+    position: absolute;
+    top: 80%;
+    left: 20%;
+  }
+  
+  .front-leg1 {
+    position: absolute;
+    top: 80%;
+    left: 65%;
+  }
+  
+  .front-leg2 {
+    position: absolute;
+    top: 80%;
+    left: 70%;
+  }
+  
+  .head {
+    position: absolute;
+    top: 10%;
+    left: 85%;
+    width: 40%;
+    height: 50%;
+    background: #A4A9AD;
+    border-radius: 50%;
+    border: solid 4px gray;
+  }
+  
+  .head-cover {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: #A4A9AD;
+    border-radius: 50%;
+    z-index: 3;
+  }
+  
+  .trunk-upper {
+    position: absolute;
+    top: 30%;
+    left: 120%;
+    width: 10%;
+    height: 50%;
+    background: #A4A9AD;
+    border-radius: 0 20px 0 20px;
+    border: solid 4px gray;
+  }
+  
+  .trunk-upper-cover {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: #A4A9AD;
+    border-radius: 0 20px 0 20px;
+    z-index: 3;
+  }
+  
+  .trunk-lower {
+    position: absolute;
+    top: 70%;
+    left: 120%;
+    width: 20%;
+    height: 10%;
+    background: #A4A9AD;
+    border-radius: 0 20px 20px 20px;
+    border: solid 4px gray;
+  }
+  
+  .ear {
+    position: absolute;
+    top: 20%;
+    left: 95%;
+    width: 15%;
+    height: 50%;
+    background: #A4A9AD;
+    border-radius: 50%;
+    border: solid 4px gray;
+    z-index: 4;
+  }
+  
+  .eye {
+    background: #FFFFFF;
+    border-radius: 50%;
+    width: 10%;
+    height: 15%; 
+    position: absolute;
+    top: 20%;
+    left: 110%;
+    z-index: 4;
+  }
+  
+  .inner-eye {
+    background: #000000;
+    border-radius: 50%;
+    width: 50%;
+    height: 50%; 
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    z-index: 4;
+  }
+  
+  .tail {
+    background-color: grey;
+    border: solid 4px gray;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -10%;
+    left: -20%;
+  
+  -webkit-clip-path: polygon(70% 41%, 0 57%, 74% 61%);
+  clip-path: polygon(70% 41%, 0 57%, 74% 61%);
+  }
+  
+  .pile {
+    position: absolute;
+    width: 20%;
+    height: 15%;
+    top: 90%;
+    left: -20%;
+  }
+  
+  .pile1 {
+    background-color: brown;
+    border-radius: 50%;
+    border: solid 4px black;
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    top: 65%;
+    left: 0%;
+  }
+  
+  .pile2 {
+    background-color: brown;
+    border-radius: 50%;
+    border: solid 4px black;
+    width: 70%;
+    height: 50%;
+    position: absolute;
+    top: 40%;
+    left: 15%;
+  }
+  
+  .pile3 {
+    background-color: brown;
+    border-radius: 50%;
+    border: solid 4px black;
+    width: 30%;
+    height: 40%;
+    position: absolute;
+    top: 20%;
+    left: 35%;
+  }
+  
+  /* borrowed fade-in from: http://devinvinson.com/delayed-fade-in-effects-with-css/ */
+  /* Keyframes for the fade-in */
+  @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  
+  .fade-in {
+    opacity:0;
+    opacity: 1 \9; /*just in case ie*/
+    -webkit-animation:fadeIn ease-in 1;
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+  
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+  
+    -webkit-animation-duration:2s;
+    -moz-animation-duration:2s;
+    animation-duration:2s;
+  }
+  
+  .fade-in-delay {
+    -webkit-animation-delay: 4.0s;
+    -moz-animation-delay: 4.0s;
+    animation-delay: 4.0s;
+  }
+  
+  .footer {
+    margin-top: 100px;
+  }
+  </style>
+  <script>
+    window.console = window.console || function(t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  </head>
+  <body translate="no">
+  
+  
+  
+  <div class="box">
+  <div class="title">
+  Daily CSS - Day 2 - Elephant
+  </div>
+  
+  <div class="elephant">
+  <div class="elephant-cover"></div>
+  <div class="leg back-leg1"></div>
+  <div class="leg back-leg2"></div>
+  <div class="leg front-leg1"></div>
+  <div class="leg front-leg2"></div>
+  <div class="head">
+  <div class="head-cover"></div>
+  </div>
+  <div class="trunk-upper">
+  <div class="trunk-upper-cover"></div>
+  </div>
+  <div class="trunk-lower"></div>
+  <div class="ear"></div>
+  <div class="eye">
+  <div class="inner-eye">
+  </div>
+  </div>
+  <div class="tail"></div>
+  <div class="pile fade-in-delay fade-in">
+  <div class="pile1"></div>
+  <div class="pile2"></div>
+  <div class="pile3"></div>
+  </div>
+  </div>
+  </div>
+  <footer class="footer">
+  <hr>
+  <p class="text-center">
+  Page built by
+  <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (Aspiring Full Stack Developer) 2017</em>
+  </p>
+  </footer>
+  
+  
+  
+  </body></html>

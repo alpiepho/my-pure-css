@@ -1,0 +1,281 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <title>CodePen - Daily CSS Day08 - Notebook</title>
+  <style>
+  body {
+    background: #606060;
+    color: #FFFFFF;
+    font-family: sans-serif;
+  }
+  
+  .title {
+    position: relative;
+    left: 25%;
+    top: -8%;
+    display: block;
+    margin: auto;
+    font-size: 2em;
+  }
+  
+  .box {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    display: block;
+    margin: auto;
+    margin-top: 0%;
+    background: none;
+    overflow: hidden;
+  }
+  
+  .left-page {
+    position: absolute;
+    top: 20%;
+    left: 14%;
+    width: 35%;
+    height: 60%;
+    background: #FFFFFF;
+  }
+  
+  .right-page {
+    position: absolute;
+    top: 20%;
+    left: 51%;
+    width: 35%;
+    height: 60%;
+    background: #FFFFFF;
+  }
+  
+  .hole-left-1 {
+    position: absolute;
+    top: 30%;
+    left: 43%;
+    width: 5%;
+    height: 5%;
+    background: #606060;
+  }
+  
+  .hole-left-2 {
+    position: absolute;
+    top: 50%;
+    left: 43%;
+    width: 5%;
+    height: 5%;
+    background: #606060;
+  }
+  
+  .hole-left-3 {
+    position: absolute;
+    top: 70%;
+    left: 43%;
+    width: 5%;
+    height: 5%;
+    background: #606060;
+  }
+  
+  .hole-right-1 {
+    position: absolute;
+    top: 30%;
+    left: 54%;
+    width: 5%;
+    height: 5%;
+    background: #606060;
+  }
+  
+  .hole-right-2 {
+    position: absolute;
+    top: 50%;
+    left: 54%;
+    width: 5%;
+    height: 5%;
+    background: #606060;
+  }
+  
+  .hole-right-3 {
+    position: absolute;
+    top: 70%;
+    left: 54%;
+    width: 5%;
+    height: 5%;
+    background: #606060;
+  }
+  
+  .ring-left-1 {
+    position: absolute;
+    top: 31%;
+    left: 44%;
+    width: 3%;
+    height: 3%;
+    border-radius: 50%;
+    background: #000000;
+  }
+  
+  .ring-across-1 {
+    position: absolute;
+    top: 31%;
+    left: 45%;
+    width: 12%;
+    height: 3%;
+    background: #000000;
+  }
+  
+  .ring-right-1 {
+    position: absolute;
+    top: 31%;
+    left: 55%;
+    width: 3%;
+    height: 3%;
+    border-radius: 50%;
+    background: #000000;
+  }
+  
+  .ring-left-2 {
+    position: absolute;
+    top: 51%;
+    left: 44%;
+    width: 3%;
+    height: 3%;
+    border-radius: 50%;
+    background: #000000;
+  }
+  
+  .ring-across-2 {
+    position: absolute;
+    top: 51%;
+    left: 45%;
+    width: 12%;
+    height: 3%;
+    background: #000000;
+  }
+  
+  .ring-right-2 {
+    position: absolute;
+    top: 51%;
+    left: 55%;
+    width: 3%;
+    height: 3%;
+    border-radius: 50%;
+    background: #000000;
+  }
+  
+  .ring-left-3 {
+    position: absolute;
+    top: 71%;
+    left: 44%;
+    width: 3%;
+    height: 3%;
+    border-radius: 50%;
+    background: #000000;
+  }
+  
+  .ring-across-3 {
+    position: absolute;
+    top: 71%;
+    left: 45%;
+    width: 12%;
+    height: 3%;
+    background: #000000;
+  }
+  
+  .ring-right-3 {
+    position: absolute;
+    top: 71%;
+    left: 55%;
+    width: 3%;
+    height: 3%;
+    border-radius: 50%;
+    background: #000000;
+  }
+  
+  .text-right {
+    position: absolute;
+    top: 31%;
+    left: 62%;
+    width: 20%;
+    height: 5%;
+    color: #000000;
+    font-family: cursive;
+    font-size: 1em;
+    background: none;
+  }
+  
+  .text-right::before {
+    content: "Once upon a ...";
+  }
+  
+  .text-left {
+    position: absolute;
+    top: 41%;
+    left: 18%;
+    width: 25%;
+    height: 5%;
+    color: #000000;
+    font-family: cursive;
+    font-size: 2em;
+    font-weight: bold;
+    font-decoration: underline;
+    background: none;
+    transform: scale(-1, 1);
+  }
+  
+  .text-left::before {
+    content: "My Story";
+    opacity: 0.3;
+  }
+  
+  .footer {
+    color: #FFFFFF;
+  }
+  .footer a:active,
+  .footer a:focus,
+  .footer a:hover,
+  .footer a:visited {
+    color: #000000;
+  }
+  </style>
+  <script>
+    window.console = window.console || function(t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  </head>
+  <body translate="no">
+  <div class="title">Daily CSS - Day 8 - Notebook</div>
+  <div class="box">
+  <div class="left-page"></div>
+  <div class="right-page"></div>
+  <div class="spiral">
+  <div class="hole-left-1"></div>
+  <div class="hole-left-2"></div>
+  <div class="hole-left-3"></div>
+  <div class="hole-right-1"></div>
+  <div class="hole-right-2"></div>
+  <div class="hole-right-3"></div>
+  <div class="ring-left-1"></div>
+  <div class="ring-across-1"></div>
+  <div class="ring-right-1"></div>
+  <div class="ring-left-2"></div>
+  <div class="ring-across-2"></div>
+  <div class="ring-right-2"></div>
+  <div class="ring-left-3"></div>
+  <div class="ring-across-3"></div>
+  <div class="ring-right-3"></div>
+  <div class="text-right"></div>
+  <div class="text-left"></div>
+  </div>
+  </div>
+  <div class="footer">
+  <hr>
+  <p>
+  Page built by <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (Aspiring Full Stack Developer) 2017</em></p>
+  </div>
+  
+  
+  </body></html>

@@ -1,0 +1,238 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <title>CodePen - Daily CSS Day23 - Wolverine</title>
+  <style>
+  body {
+    background: #000000;
+    color: #FFFFFF;
+    font-family: sans-serif;
+  }
+  
+  .title {
+    font-size: 1.5em;
+    text-align: center;
+    color: #DBD30C;
+  }
+  
+  .box {
+    position: relative;
+    width: 600px;
+    height: 500px;
+    margin: auto;
+    background: none;
+    overflow: hidden;
+  }
+  
+  .scratch {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: #4090C5;
+    transform-origin: center bottom;
+  }
+  
+  .left-scratch {
+    position: absolute;
+    width: 150px;
+    height: 400px;
+    top: 40px;
+    left: 180px;
+    background: none;
+    transform: rotate(-40deg);
+  }
+  
+  .scratch:nth-child(1) {
+    top: 0;
+    left: 20%;
+    transform: rotate(-4deg);
+  }
+  
+  .scratch:nth-child(2) {
+    top: 0;
+    left: 50%;
+  }
+  
+  .scratch:nth-child(3) {
+    top: 0;
+    left: 80%;
+    transform: rotate(4deg);
+  }
+  
+  .right-scratch {
+    position: absolute;
+    width: 150px;
+    height: 400px;
+    top: 40px;
+    right: 180px;
+    background: none;
+    transform: rotate(40deg);
+  }
+  
+  .scratch:nth-child(4) {
+    top: 0;
+    left: 20%;
+    transform: rotate(-4deg);
+  }
+  
+  .scratch:nth-child(5) {
+    top: 0;
+    left: 50%;
+  }
+  
+  .scratch:nth-child(6) {
+    top: 0;
+    left: 80%;
+    transform: rotate(4deg);
+  }
+  
+  .claw {
+    position: absolute;
+    width: 100px;
+    height: 110%;
+    -webkit-clip-path: polygon(50% 0%, 40% 100%, 60% 100%);
+    clip-path: polygon(50% 0%, 40% 100%, 60% 100%);
+    background: -webkit-linear-gradient(top, #EBE5F1, #060407);
+    transform-origin: center bottom;
+  }
+  
+  .left-claw {
+    position: absolute;
+    width: 150px;
+    height: 400px;
+    top: 40px;
+    left: 180px;
+    background: none;
+    transform: rotate(-40deg);
+    overflow: hidden;
+    animation-name: show-left-claw;
+    animation-delay: 0s;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
+  
+  .claw:nth-child(1) {
+    top: -10%;
+    left: -12%;
+    transform: skew(4deg);
+  }
+  
+  .claw:nth-child(2) {
+    top: -10%;
+    left: 18%;
+  }
+  
+  .claw:nth-child(3) {
+    top: -10%;
+    left: 48%;
+    transform: skew(-4deg);
+  }
+  
+  .right-claw {
+    position: absolute;
+    width: 150px;
+    height: 400px;
+    top: 40px;
+    right: 180px;
+    background: none;
+    transform: rotate(40deg);
+    overflow: hidden;
+    animation-name: show-right-claw;
+    animation-delay: 0s;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
+  
+  .claw:nth-child(4) {
+    top: -10%;
+    left: -12%;
+    transform: skew(4deg);
+  }
+  
+  .claw:nth-child(5) {
+    top: -10%;
+    left: 18%;
+  }
+  
+  .claw:nth-child(6) {
+    top: -10%;
+    left: 48%;
+    transform: skew(-4deg);
+  }
+  
+  .footer {
+    color: #DBD30C;
+    text-align: center;
+  }
+  .footer p a:active,
+  .footer p a:focus,
+  .footer p a:hover,
+  .footer p a:visited {
+    color: #4090C5;
+  }
+  
+  @keyframes show-left-claw {
+    60% {
+      transform: translate(500px, 600px) rotate(-40deg);
+    }
+    100% {
+      transform: translate(500px, 600px) rotate(-40deg);
+    }
+  }
+  @keyframes show-right-claw {
+    60% {
+      transform: translate(-500px, 600px) rotate(40deg);
+    }
+    100% {
+      transform: translate(-500px, 600px) rotate(40deg);
+    }
+  }
+  </style>
+  <script>
+    window.console = window.console || function(t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  </head>
+  <body translate="no">
+  <div class="title">
+  <h2>Daily CSS - Day 23 - Wolverine</h2>
+  </div>
+  <div class="box">
+  <div class="left-scratch">
+  <div class="scratch"></div>
+  <div class="scratch"></div>
+  <div class="scratch"></div>
+  </div>
+  <div class="right-scratch">
+  <div class="scratch"></div>
+  <div class="scratch"></div>
+  <div class="scratch"></div>
+  </div>
+  <div class="left-claw">
+  <div class="claw"></div>
+  <div class="claw"></div>
+  <div class="claw"></div>
+  </div>
+  <div class="right-claw">
+  <div class="claw"></div>
+  <div class="claw"></div>
+  <div class="claw"></div>
+  </div>
+  </div>
+  <div class="footer">
+  <hr>
+  <p>
+  Page built by <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (Aspiring Full Stack Developer) 2017</em></p>
+  </div>
+  
+  
+  </body></html>

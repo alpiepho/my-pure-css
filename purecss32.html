@@ -1,0 +1,176 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <title>CodePen - Daily CSS Day32 - AngularJS Logo</title>
+  <style>
+  body {
+    background: #676767;
+    color: #FFFFFF;
+    font-family: sans-serif;
+  }
+  
+  .box {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    background: none;
+    overflow: hidden;
+  }
+  
+  .title {
+    font-size: 1.5em;
+    text-align: center;
+    color: #B3B3B3;
+  }
+  
+  .title span {
+    color: #B3B3B3;
+  }
+  
+  .shield-outer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    -webkit-clip-path: polygon(50% 0%, 100% 16%, 92% 80%, 50% 100%, 8% 80%, 0 15%);
+    clip-path: polygon(50% 0%, 100% 16%, 92% 80%, 50% 100%, 8% 80%, 0 15%);
+    margin: auto;
+    background: #B3B3B3;
+    transform: scale(0.9, 1);
+  }
+  
+  .shield-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    -webkit-clip-path: polygon(50% 0%, 100% 16%, 92% 80%, 50% 100%, 8% 80%, 0 15%);
+    clip-path: polygon(50% 0%, 100% 16%, 92% 80%, 50% 100%, 8% 80%, 0 15%);
+    margin: auto;
+    background: #DF2E31;
+    transform: scale(0.9, 0.9);
+  }
+  
+  .letter-outer {
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    top: 5%;
+    left: 12.5%;
+    -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform: scale(0.9, 0.9);
+    margin: auto;
+    background: #B3B3B3;
+  }
+  
+  .letter-inner {
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    top: 33%;
+    left: 12.5%;
+    -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform: scale(0.9, 0.9);
+    margin: auto;
+    background: #DF2E31;
+  }
+  
+  .letter-bar {
+    position: absolute;
+    width: 75%;
+    height: 15%;
+    top: 65%;
+    left: 12%;
+    margin: auto;
+    background: #B3B3B3;
+    transform: scale(0.9, 0.9);
+  }
+  
+  .shield-shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    -webkit-clip-path: polygon(50% 0%, 100% 16%, 92% 80%, 50% 100%, 8% 80%, 0 15%);
+    clip-path: polygon(50% 0%, 100% 16%, 92% 80%, 50% 100%, 8% 80%, 0 15%);
+    margin: auto;
+    background: #DF2E31;
+    background: linear-gradient(to right, transparent 50%, rgba(0, 0, 0, 0.3) 50%);
+    transform: scale(0.9, 0.9);
+  }
+  
+  .learning {
+    color: #B3B3B3;
+    text-align: center;
+  }
+  
+  .footer {
+    color: #B3B3B3;
+    text-align: center;
+  }
+  .footer p a:active,
+  .footer p a:focus,
+  .footer p a:hover,
+  .footer p a:visited {
+    color: #B3B3B3;
+  }
+  
+  /*
+  @keyframes show-blink {
+     0%   { transform: scale(1, 1); }
+    20%   { transform: scale(1, 1); }
+    21%   { transform: scale(1, 0.1); }
+    22%   { transform: scale(1, 1);  }
+    100%  { transform: scale(1, 1); }
+  }
+  */
+  </style>
+  <script>
+    window.console = window.console || function(t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  </head>
+  <body translate="no">
+  
+  <div class="title">
+  <h2>Daily CSS - Day 32 - <span>AngularJS Logo</span></h2>
+  </div>
+  <div class="box">
+  <div class="shield-outer">
+  <div class="shield-inner"></div>
+  <div class="letter-outer">
+  <div class="letter-inner"></div>
+  <div class="letter-bar"></div>
+  </div>
+  <div class="shield-shadow"></div>
+  </div>
+  </div>
+  <div class="learning">
+  <h1>Good:</h1>
+  <p>- Again, nice to work on a challenge that was pretty quick.</p>
+  <h1>Bad:</h1>
+  <p>- Eye balled the dimentions of the letter widths etc.</p>
+  <h1>Ugly:</h1>
+  <p>- ...</p>
+  </div>
+  <div class="footer">
+  <hr>
+  <p>
+  Page built by <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (Aspiring Full Stack Developer) 2017</em></p>
+  </div>
+  
+  
+  </body></html>
