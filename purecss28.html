@@ -1,0 +1,366 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <title>CodePen - Daily CSS Day28 - Cogs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Rock+Salt">
+  <style>
+  body {
+    background: #1E49A8;
+    color: #000000;
+    font-family: sans-serif;
+  }
+  
+  .title {
+    font-size: 1.5em;
+    text-align: center;
+    color: #000000;
+  }
+  
+  .title span {
+    color: white;
+  }
+  
+  .box {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    background: none;
+    overflow: hidden;
+  }
+  
+  .counter {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    top: 40%;
+    left: 10%;
+    margin: auto;
+    background: none;
+    font-family: 'Rock Salt', cursive;
+    font-size: 2em;
+  }
+  .counter:before {
+    position: absolute;
+    content: '';
+    content: 'ready...';
+    animation-name: show-counter;
+    animation-delay: 0s;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: step-end;
+  }
+  
+  .cable1 {
+    position: absolute;
+    width: 60%;
+    height: 2%;
+    top: 5%;
+    left: 18%;
+    margin: auto;
+    background: #FFFFFF;
+    transform-origin: left center;
+    transform: rotate(3deg);
+  }
+  
+  .cable2 {
+    position: absolute;
+    width: 2%;
+    height: 25%;
+    top: 15%;
+    left: 80%;
+    margin: auto;
+    background: #FFFFFF;
+    transform-origin: center top;
+    transform: rotate(45deg);
+  }
+  
+  .cable3 {
+    position: absolute;
+    width: 2%;
+    height: 60%;
+    top: 35%;
+    left: 62%;
+    margin: auto;
+    background: #FFFFFF;
+  }
+  
+  .pully {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    margin: auto;
+    background: #000000;
+    border-radius: 50%;
+  }
+  
+  .pully1 {
+    top: 5%;
+    left: 3%;
+    animation-name: show-pully1;
+    animation-delay: 0s;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+  }
+  
+  .pully2 {
+    top: 0%;
+    left: 60%;
+    transform: scale(0.5, 0.5);
+    animation-name: show-pully2;
+    animation-delay: 0s;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+  }
+  
+  .pully3 {
+    top: 20%;
+    left: 50%;
+    transform: scale(0.3, 0.3);
+    animation-name: show-pully3;
+    animation-delay: 0s;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+  }
+  
+  .slot {
+    position: absolute;
+    width: 20%;
+    height: 35%;
+    margin: auto;
+    background: #1E49A8;
+    border-radius: 1em 1em 1em 1em;
+    transform-orgin: center bottom;
+  }
+  
+  .slot1 {
+    top: 6%;
+    left: 40%;
+  }
+  
+  .slot2 {
+    top: 60%;
+    left: 40%;
+  }
+  
+  .slot3 {
+    top: 32%;
+    left: 68%;
+    transform: rotate(90deg);
+  }
+  
+  .slot4 {
+    top: 32%;
+    left: 12%;
+    transform: rotate(90deg);
+  }
+  
+  .sign {
+    position: absolute;
+    width: 50%;
+    height: 40%;
+    top: 55%;
+    left: 38.5%;
+    margin: auto;
+    background: #FFFFFF;
+    border-radius: 1em;
+    font-family: 'Rock Salt', cursive;
+    font-size: 1.3em;
+    text-align: center;
+    animation-name: show-sign;
+    animation-delay: 0s;
+    animation-duration: 10s;
+    animation-iteration-count: 1;
+  }
+  .sign:before {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    top: -7%;
+    left: 44.7%;
+    background: #FFFFFF;
+    border: solid 1px #000000;
+    border-radius: 50%;
+  }
+  
+  .sign p:nth-child(2) {
+    font-size: 2em;
+    margin-top: -0.9em;
+  }
+  
+  .learning {
+    text-align: center;
+    margin-top: 0%;
+  }
+  
+  .footer {
+    color: #000000;
+    text-align: center;
+  }
+  .footer p a:active,
+  .footer p a:focus,
+  .footer p a:hover,
+  .footer p a:visited {
+    color: white;
+  }
+  
+  @keyframes show-counter {
+    0% {
+      content: '';
+    }
+    5% {
+      content: '1...';
+    }
+    15% {
+      content: '12...';
+    }
+    25% {
+      content: '123...';
+    }
+    35% {
+      content: 'go!';
+    }
+    80% {
+      content: '';
+    }
+    100% {
+      content: '';
+    }
+  }
+  @keyframes show-pully1 {
+    0% {
+      transform: rotate(0deg);
+    }
+    37% {
+      transform: rotate(0deg);
+    }
+    80% {
+      transform: rotate(-360deg);
+    }
+    81% {
+      transform: rotate(-355deg);
+    }
+    100% {
+      transform: rotate(-355deg);
+    }
+  }
+  @keyframes show-pully2 {
+    0% {
+      transform: scale(0.5, 0.5) rotate(0deg);
+    }
+    37% {
+      transform: scale(0.5, 0.5) rotate(0deg);
+    }
+    80% {
+      transform: scale(0.5, 0.5) rotate(-360deg);
+    }
+    81% {
+      transform: scale(0.5, 0.5) rotate(-355deg);
+    }
+    100% {
+      transform: scale(0.5, 0.5) rotate(-355deg);
+    }
+  }
+  @keyframes show-pully3 {
+    0% {
+      transform: scale(0.3, 0.3) rotate(0deg);
+    }
+    37% {
+      transform: scale(0.3, 0.3) rotate(0deg);
+    }
+    80% {
+      transform: scale(0.3, 0.3) rotate(360deg);
+    }
+    81% {
+      transform: scale(0.3, 0.3) rotate(355deg);
+    }
+    100% {
+      transform: scale(0.3, 0.3) rotate(355deg);
+    }
+  }
+  @keyframes show-sign {
+    0% {
+      transform: translate(0, 500px);
+    }
+    37% {
+      transform: translate(0, 500px);
+    }
+    80% {
+      transform: translate(0, 0px);
+    }
+    100% {
+      transform: translate(0, 0px);
+    }
+  }
+  </style>
+  <script>
+    window.console = window.console || function(t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  </head>
+  <body translate="no">
+  <div class="title">
+  <h2>Daily CSS - Day 28 - <span>Cogs</span></h2>
+  </div>
+  <div class="box">
+  <div class="counter"></div>
+  <div class="cable1"></div>
+  <div class="cable2"></div>
+  <div class="cable3"></div>
+  <div class="pully pully1">
+  <div class="slot slot1"></div>
+  <div class="slot slot2"></div>
+  <div class="slot slot3"></div>
+  <div class="slot slot4"></div>
+  </div>
+  <div class="pully pully2">
+  <div class="slot slot1"></div>
+  <div class="slot slot2"></div>
+  <div class="slot slot3"></div>
+  <div class="slot slot4"></div>
+  </div>
+  <div class="pully pully3">
+  <div class="slot slot1"></div>
+  <div class="slot slot2"></div>
+  <div class="slot slot3"></div>
+  <div class="slot slot4"></div>
+  </div>
+  <div class="sign">
+  <p>"Daily CSS Challenge"</p>
+  <p>Rocks!</p>
+  </div>
+  </div>
+  <div class="learning">
+  <h1>Good:</h1>
+  <p>- happy with clean HTML and CSS code</p>
+  <p>- enjoyed challenge of the annimation timing</p>
+  <p>- see notes on annimation process in CSS</p>
+  <h1>Bad:</h1>
+  <p>- not happy with pully/spokes css</p>
+  <p>- should look into CodePen templates??</p>
+  <h1>Ugly:</h1>
+  <p>- really wanted to show cable around pullys and gathering on big pully</p>
+  </div>
+  <div class="footer">
+  <hr>
+  <p>
+  Page built by <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (Aspiring Full Stack Developer) 2017</em></p>
+  </div>
+  
+  
+  </body></html>

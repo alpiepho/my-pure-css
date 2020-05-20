@@ -1,0 +1,443 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <title>CodePen - Daily CSS Day24 - Ironman</title>
+  <style>
+  /*
+  NOTES:
+  Happy about:
+  - organization of code
+  - use of Pug form for svg
+  - my understanding of CSS selectors
+  - learned more about SVG syntax
+  - understand annimation in CSS pretty well
+  
+  Disappointed with:
+  - struggles with SVG and filtering
+  - all the manual tweeking of positions to get segments to lineup
+  - postioning and orientation is off
+  
+  */
+  body {
+    background: #000000;
+    color: #777777;
+    font-family: sans-serif;
+  }
+  
+  .title {
+    font-size: 1.5em;
+    text-align: center;
+    color: #AD262D;
+  }
+  
+  .title span {
+    color: #FACD66;
+  }
+  
+  .box {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    background: none;
+    overflow: hidden;
+  }
+  
+  .container {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 80px;
+    left: 180px;
+    background: none;
+    transform: scale(0.7, 0.7) translate(-200px, -200px);
+    animation-name: show-container;
+    animation-delay: 0s;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
+  
+  svg {
+    position: absolute;
+    width: 300px;
+    height: 320px;
+    top: 0px;
+    left: 0px;
+    background: none;
+  }
+  
+  #segment-inner {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    background: none;
+    transform: scale(0.8, 0.8) translate(120px, 90px);
+  }
+  
+  .segment:nth-child(1) {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    top: 40px;
+    left: 180px;
+    margin: auto;
+    background: none;
+    transform-origin: center bottom;
+    transform: rotate(36deg);
+  }
+  
+  .segment:nth-child(2) {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    top: 40px;
+    left: 180px;
+    margin: auto;
+    background: none;
+    transform-origin: center bottom;
+    transform: rotate(72deg);
+  }
+  
+  .segment:nth-child(3) {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    top: 40px;
+    left: 180px;
+    margin: auto;
+    background: none;
+    transform-origin: center bottom;
+    transform: rotate(108deg);
+  }
+  
+  .segment:nth-child(4) {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    top: 40px;
+    left: 180px;
+    margin: auto;
+    background: none;
+    transform-origin: center bottom;
+    transform: rotate(144deg);
+  }
+  
+  .segment:nth-child(5) {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    top: 40px;
+    left: 180px;
+    margin: auto;
+    background: none;
+    transform-origin: center bottom;
+    transform: rotate(180deg);
+  }
+  
+  .segment:nth-child(6) {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    top: 40px;
+    left: 180px;
+    margin: auto;
+    background: none;
+    transform-origin: center bottom;
+    transform: rotate(216deg);
+  }
+  
+  .segment:nth-child(7) {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    top: 40px;
+    left: 180px;
+    margin: auto;
+    background: none;
+    transform-origin: center bottom;
+    transform: rotate(252deg);
+  }
+  
+  .segment:nth-child(8) {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    top: 40px;
+    left: 180px;
+    margin: auto;
+    background: none;
+    transform-origin: center bottom;
+    transform: rotate(288deg);
+  }
+  
+  .segment:nth-child(9) {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    top: 40px;
+    left: 180px;
+    margin: auto;
+    background: none;
+    transform-origin: center bottom;
+    transform: rotate(324deg);
+  }
+  
+  .segment:nth-child(10) {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    top: 40px;
+    left: 180px;
+    margin: auto;
+    background: none;
+    transform-origin: center bottom;
+    transform: rotate(360deg);
+  }
+  
+  .section-circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 240px;
+    left: 185px;
+    transform: scale(1.5, 1.5);
+  }
+  
+  #circle-inner {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    background: none;
+    transform: scale(0.9, 0.9) translate(60px, 40px);
+  }
+  
+  .footer {
+    color: #AD262D;
+    text-align: center;
+  }
+  .footer p a:active,
+  .footer p a:focus,
+  .footer p a:hover,
+  .footer p a:visited {
+    color: #FACD66;
+  }
+  
+  @keyframes show-container {
+    0% {
+      opacity: 0.1;
+    }
+    8% {
+      opacity: 0.7;
+    }
+    10% {
+      opacity: 0.2;
+    }
+    12% {
+      opacity: 0.9;
+    }
+    15% {
+      opacity: 0.2;
+    }
+    20% {
+      opacity: 1.0;
+    }
+    100% {
+      opacity: 1.0;
+    }
+  }
+  </style>
+  <script>
+    window.console = window.console || function(t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  </head>
+  <body translate="no">
+  <div class="title">
+  <h2>Daily CSS - Day 24 - <span>Ironman</span></h2>
+  </div>
+  <div class="box">
+  <div class="container">
+  <div class="segment">
+  <svg id="outer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1400 1200" enable-background="new 0 0 600 400" xml:space="preserve">
+  <defs>
+  <filter id="f4" x="-100%" y="-100%" width="500%" height="500%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="20"></feGaussianBlur>
+  </filter>
+  <filter id="f6" x="-100%" y="-100%" width="500%" height="500%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="8"></feGaussianBlur>
+  </filter>
+  </defs>
+  </svg>
+  <svg viewBox="0 0 1400 1200">
+  <path id="segment-outer" d="M350,550 L200,200 Q500,110 800,200 L800,200 L650,550 L300,550 z" fill="#4CB1E4" filter="url(#f4)"></path>
+  <path id="segment-inner" d="M350,550 L200,200 Q500,110 800,200 L800,200 L650,550 L300,550 z" fill="white" filter="url(#f6)"></path>
+  </svg>
+  </div>
+  <div class="segment">
+  <svg id="outer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1400 1200" enable-background="new 0 0 600 400" xml:space="preserve">
+  <defs>
+  <filter id="f4" x="-100%" y="-100%" width="500%" height="500%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="20"></feGaussianBlur>
+  </filter>
+  <filter id="f6" x="-100%" y="-100%" width="500%" height="500%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="8"></feGaussianBlur>
+  </filter>
+  </defs>
+  </svg>
+  <svg viewBox="0 0 1400 1200">
+  <path id="segment-outer" d="M350,550 L200,200 Q500,110 800,200 L800,200 L650,550 L300,550 z" fill="#4CB1E4" filter="url(#f4)"></path>
+  <path id="segment-inner" d="M350,550 L200,200 Q500,110 800,200 L800,200 L650,550 L300,550 z" fill="white" filter="url(#f6)"></path>
+  </svg>
+  </div>
+  <div class="segment">
+  <svg id="outer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1400 1200" enable-background="new 0 0 600 400" xml:space="preserve">
+  <defs>
+  <filter id="f4" x="-100%" y="-100%" width="500%" height="500%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="20"></feGaussianBlur>
+  </filter>
+  <filter id="f6" x="-100%" y="-100%" width="500%" height="500%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="8"></feGaussianBlur>
+  </filter>
+  </defs>
+  </svg>
+  <svg viewBox="0 0 1400 1200">
+  <path id="segment-outer" d="M350,550 L200,200 Q500,110 800,200 L800,200 L650,550 L300,550 z" fill="#4CB1E4" filter="url(#f4)"></path>
+  <path id="segment-inner" d="M350,550 L200,200 Q500,110 800,200 L800,200 L650,550 L300,550 z" fill="white" filter="url(#f6)"></path>
+  </svg>
+  </div>
+  <div class="segment">
+  <svg id="outer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1400 1200" enable-background="new 0 0 600 400" xml:space="preserve">
+  <defs>
+  <filter id="f4" x="-100%" y="-100%" width="500%" height="500%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="20"></feGaussianBlur>
+  </filter>
+  <filter id="f6" x="-100%" y="-100%" width="500%" height="500%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="8"></feGaussianBlur>
+  </filter>
+  </defs>
+  </svg>
+  <svg viewBox="0 0 1400 1200">
+  <path id="segment-outer" d="M350,550 L200,200 Q500,110 800,200 L800,200 L650,550 L300,550 z" fill="#4CB1E4" filter="url(#f4)"></path>
+  <path id="segment-inner" d="M350,550 L200,200 Q500,110 800,200 L800,200 L650,550 L300,550 z" fill="white" filter="url(#f6)"></path>
+  </svg>
+  </div>
+  <div class="segment">
+  <svg id="outer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1400 1200" enable-background="new 0 0 600 400" xml:space="preserve">
+  <defs>
+  <filter id="f4" x="-100%" y="-100%" width="500%" height="500%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="20"></feGaussianBlur>
+  </filter>
+  <filter id="f6" x="-100%" y="-100%" width="500%" height="500%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="8"></feGaussianBlur>
+  </filter>
+  </defs>
+  </svg>
+  <svg viewBox="0 0 1400 1200">
+  <path id="segment-outer" d="M350,550 L200,200 Q500,110 800,200 L800,200 L650,550 L300,550 z" fill="#4CB1E4" filter="url(#f4)"></path>
+  <path id="segment-inner" d="M350,550 L200,200 Q500,110 800,200 L800,200 L650,550 L300,550 z" fill="white" filter="url(#f6)"></path>
+  </svg>
+  </div>
+  <div class="segment">
+  <svg id="outer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1400 1200" enable-background="new 0 0 600 400" xml:space="preserve">
+  <defs>
+  <filter id="f4" x="-100%" y="-100%" width="500%" height="500%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="20"></feGaussianBlur>
+  </filter>
+  <filter id="f6" x="-100%" y="-100%" width="500%" height="500%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="8"></feGaussianBlur>
+  </filter>
+  </defs>
+  </svg>
+  <svg viewBox="0 0 1400 1200">
+  <path id="segment-outer" d="M350,550 L200,200 Q500,110 800,200 L800,200 L650,550 L300,550 z" fill="#4CB1E4" filter="url(#f4)"></path>
+  <path id="segment-inner" d="M350,550 L200,200 Q500,110 800,200 L800,200 L650,550 L300,550 z" fill="white" filter="url(#f6)"></path>
+  </svg>
+  </div>
+  <div class="segment">
+  <svg id="outer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1400 1200" enable-background="new 0 0 600 400" xml:space="preserve">
+  <defs>
+  <filter id="f4" x="-100%" y="-100%" width="500%" height="500%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="20"></feGaussianBlur>
+  </filter>
+  <filter id="f6" x="-100%" y="-100%" width="500%" height="500%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="8"></feGaussianBlur>
+  </filter>
+  </defs>
+  </svg>
+  <svg viewBox="0 0 1400 1200">
+  <path id="segment-outer" d="M350,550 L200,200 Q500,110 800,200 L800,200 L650,550 L300,550 z" fill="#4CB1E4" filter="url(#f4)"></path>
+  <path id="segment-inner" d="M350,550 L200,200 Q500,110 800,200 L800,200 L650,550 L300,550 z" fill="white" filter="url(#f6)"></path>
+  </svg>
+  </div>
+  <div class="segment">
+  <svg id="outer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1400 1200" enable-background="new 0 0 600 400" xml:space="preserve">
+  <defs>
+  <filter id="f4" x="-100%" y="-100%" width="500%" height="500%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="20"></feGaussianBlur>
+  </filter>
+   <filter id="f6" x="-100%" y="-100%" width="500%" height="500%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="8"></feGaussianBlur>
+  </filter>
+  </defs>
+  </svg>
+  <svg viewBox="0 0 1400 1200">
+  <path id="segment-outer" d="M350,550 L200,200 Q500,110 800,200 L800,200 L650,550 L300,550 z" fill="#4CB1E4" filter="url(#f4)"></path>
+  <path id="segment-inner" d="M350,550 L200,200 Q500,110 800,200 L800,200 L650,550 L300,550 z" fill="white" filter="url(#f6)"></path>
+  </svg>
+  </div>
+  <div class="segment">
+  <svg id="outer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1400 1200" enable-background="new 0 0 600 400" xml:space="preserve">
+  <defs>
+  <filter id="f4" x="-100%" y="-100%" width="500%" height="500%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="20"></feGaussianBlur>
+  </filter>
+  <filter id="f6" x="-100%" y="-100%" width="500%" height="500%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="8"></feGaussianBlur>
+  </filter>
+  </defs>
+  </svg>
+  <svg viewBox="0 0 1400 1200">
+  <path id="segment-outer" d="M350,550 L200,200 Q500,110 800,200 L800,200 L650,550 L300,550 z" fill="#4CB1E4" filter="url(#f4)"></path>
+  <path id="segment-inner" d="M350,550 L200,200 Q500,110 800,200 L800,200 L650,550 L300,550 z" fill="white" filter="url(#f6)"></path>
+  </svg>
+  </div>
+  <div class="segment">
+  <svg id="outer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1400 1200" enable-background="new 0 0 600 400" xml:space="preserve">
+  <defs>
+  <filter id="f4" x="-100%" y="-100%" width="500%" height="500%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="20"></feGaussianBlur>
+  </filter>
+  <filter id="f6" x="-100%" y="-100%" width="500%" height="500%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="8"></feGaussianBlur>
+  </filter>
+  </defs>
+  </svg>
+  <svg viewBox="0 0 1400 1200">
+  <path id="segment-outer" d="M350,550 L200,200 Q500,110 800,200 L800,200 L650,550 L300,550 z" fill="#4CB1E4" filter="url(#f4)"></path>
+  <path id="segment-inner" d="M350,550 L200,200 Q500,110 800,200 L800,200 L650,550 L300,550 z" fill="white" filter="url(#f6)"></path>
+  </svg>
+  </div>
+  <div class="section-circle">
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 600 400" xml:space="preserve">
+  <circle id="circle-outer" cx="320" cy="280" r="240" fill="#4CB1E4" filter="url(#f4)"></circle>
+  <circle id="circle-inner" cx="300" cy="280" r="240" fill="white" filter="url(#f6)"></circle>
+  </svg>
+  </div>
+  </div>
+  </div>
+  <div class="footer">
+  <hr>
+  <p>
+  Page built by <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (Aspiring Full Stack Developer) 2017</em></p>
+  </div>
+  
+  
+  </body></html>

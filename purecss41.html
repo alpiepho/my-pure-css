@@ -1,0 +1,359 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <title>CodePen - Daily CSS Day41 - Startup Logo</title>
+  <style>
+  body {
+    background: #77B5FE;
+    color: #FFFFFF;
+    font-family: sans-serif;
+  }
+  
+  .box {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    margin: auto;
+    background: none;
+  }
+  
+  .title {
+    font-size: 1.5em;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 0px;
+  }
+  
+  .title span {
+    color: #000000;
+  }
+  
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background: none;
+    animation: show-balloon 10s linear 0s infinite normal forwards running;
+  }
+  
+  .row1 {
+    position: absolute;
+    left: -140%;
+    width: 350%;
+    height: 160%;
+    margin: auto;
+    background: red;
+    border-radius: 50%;
+    overflow: hidden;
+    top: -70%;
+    background: red;
+  }
+  
+  .row2 {
+    position: absolute;
+    left: -140%;
+    width: 350%;
+    height: 160%;
+    margin: auto;
+    background: red;
+    border-radius: 50%;
+    overflow: hidden;
+    top: -90%;
+    background: yellow;
+  }
+  
+  .row3 {
+    position: absolute;
+    left: -140%;
+    width: 350%;
+    height: 160%;
+    margin: auto;
+    background: red;
+    border-radius: 50%;
+    overflow: hidden;
+    top: -110%;
+    background: blue;
+  }
+  
+  .row4 {
+    position: absolute;
+    left: -140%;
+    width: 350%;
+    height: 160%;
+    margin: auto;
+    background: red;
+    border-radius: 50%;
+    overflow: hidden;
+    top: -130%;
+    background: red;
+  }
+  
+  .panel1 {
+    position: absolute;
+    width: 20%;
+    height: 60%;
+    margin: auto;
+    background: blue;
+    border-radius: 49% 49% 47% 47% / 45% 45% 60% 60%;
+    overflow: hidden;
+    transform-origin: center bottom;
+    top: 10%;
+    left: 40%;
+    transform: scale(1.5, 1) rotate(-10deg);
+  }
+  
+  .panel2 {
+    position: absolute;
+    width: 20%;
+    height: 60%;
+    margin: auto;
+    background: blue;
+    border-radius: 49% 49% 47% 47% / 45% 45% 60% 60%;
+    overflow: hidden;
+    transform-origin: center bottom;
+    top: 10%;
+    left: 40%;
+    transform: scale(1.5, 1) rotate(10deg);
+  }
+  
+  .panel3 {
+    position: absolute;
+    width: 20%;
+    height: 60%;
+    margin: auto;
+    background: blue;
+    border-radius: 49% 49% 47% 47% / 45% 45% 60% 60%;
+    overflow: hidden;
+    transform-origin: center bottom;
+    top: 10%;
+    left: 40%;
+    transform: scale(1.2, 1) rotate(-7deg);
+  }
+  
+  .panel4 {
+    position: absolute;
+    width: 20%;
+    height: 60%;
+    margin: auto;
+    background: blue;
+    border-radius: 49% 49% 47% 47% / 45% 45% 60% 60%;
+    overflow: hidden;
+    transform-origin: center bottom;
+    top: 10%;
+    left: 40%;
+    transform: scale(1.2, 1) rotate(7deg);
+  }
+  
+  .panel5 {
+    position: absolute;
+    width: 20%;
+    height: 60%;
+    margin: auto;
+    background: blue;
+    border-radius: 49% 49% 47% 47% / 45% 45% 60% 60%;
+    overflow: hidden;
+    transform-origin: center bottom;
+    top: 10%;
+    left: 40%;
+  }
+  
+  .flame {
+    width: 5%;
+    height: 5%;
+    top: 75%;
+    left: 47%;
+    background: red;
+    bottom: 0;
+    position: absolute;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+    transform: rotate(-45deg);
+    top: 72%;
+    left: 47%;
+    background: red;
+    transform: rotate(-45deg) scale(0.7, 0.7);
+    animation: show-flame 10s linear 0s infinite normal forwards running;
+  }
+  .flame:before {
+    position: absolute;
+    content: '';
+    width: 5%;
+    height: 5%;
+    top: 75%;
+    left: 47%;
+    background: red;
+    bottom: 0;
+    position: absolute;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+    transform: rotate(-45deg);
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    background: yellow;
+    transform: rotate(200deg) scale(0.2, 0.5);
+  }
+  
+  .basket {
+    position: absolute;
+    width: 15%;
+    height: 8%;
+    top: 78%;
+    left: 42%;
+    margin: auto;
+    border-radius: 0.2em 0.2em 0.5em 0.5em;
+    background: brown;
+  }
+  
+  .line1 {
+    position: absolute;
+    width: 1%;
+    height: 20%;
+    top: 62%;
+    left: 41%;
+    margin: auto;
+    background: #000000;
+    transform: rotate(-14deg);
+  }
+  
+  .line2 {
+    position: absolute;
+    width: 1%;
+    height: 20%;
+    top: 62%;
+    left: 57%;
+    margin: auto;
+    background: #000000;
+    transform: rotate(14deg);
+  }
+  
+  .learning {
+    color: #000000;
+    text-align: center;
+    margin-top: 0px;
+  }
+  
+  .footer {
+    color: #000000;
+    text-align: center;
+  }
+  .footer p a:active,
+  .footer p a:focus,
+  .footer p a:hover,
+  .footer p a:visited {
+    color: #000000;
+  }
+  
+  @keyframes show-flame {
+    0% {
+      opacity: 0.0;
+    }
+    20% {
+      opacity: 0.0;
+    }
+    22% {
+      opacity: 1.0;
+    }
+    60% {
+      opacity: 1.0;
+    }
+    62% {
+      opacity: 0.0;
+    }
+    100% {
+      opacity: 0.0;
+    }
+  }
+  @keyframes show-balloon {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    20% {
+      transform: translate(0px, 0px);
+    }
+    80% {
+      transform: translate(0px, -50px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+  </style>
+  <script>
+    window.console = window.console || function(t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  </head>
+  <body translate="no">
+  
+  <div class="title">
+  <h2>Daily CSS - Day 41 - <span>Startup Logo</span></h2>
+  </div>
+  <div class="box">
+  <div class="container">
+  <div class="line1"></div>
+  <div class="line2"></div>
+  <div class="panel1">
+  <div class="row1"></div>
+  <div class="row2"></div>
+  <div class="row3"></div>
+  <div class="row4"></div>
+  </div>
+  <div class="panel2">
+  <div class="row1"></div>
+  <div class="row2"></div>
+  <div class="row3"></div>
+  <div class="row4"></div>
+  </div>
+  <div class="panel3">
+  <div class="row1"></div>
+  <div class="row2"></div>
+  <div class="row3"></div>
+  <div class="row4"></div>
+  </div>
+  <div class="panel4">
+  <div class="row1"></div>
+  <div class="row2"></div>
+  <div class="row3"></div>
+  <div class="row4"></div>
+  </div>
+  <div class="panel5">
+  <div class="row1"></div>
+  <div class="row2"></div>
+  <div class="row3"></div>
+  <div class="row4"></div>
+  </div>
+  <div class="flame"></div>
+  <div class="basket"></div>
+  </div>
+  </div>
+  <div class="learning">
+  <h1>Good:</h1>
+  <p>- Learned how border-radius can be used for egg shapes.</p>
+  <p>- using mixin for panel allowed easier tuning.</p>
+  <p>- I just like hot air balloons</p>
+  <h1>Bad:</h1>
+  <p>- Don't like how stripes of colors are mismatched from panel to panel.</p>
+  <p>- I'm not good picking my own design.</p>
+  <h1>Ugly:</h1>
+  <p>-...</p>
+  </div>
+  <div class="footer">
+  <hr>
+  <p>
+  Page built by <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (SW | FW | Embedded | Web) 2017</em></p>
+  </div>
+  
+  
+  </body></html>

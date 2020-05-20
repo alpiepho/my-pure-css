@@ -1,0 +1,273 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <title>CodePen - Daily CSS Day10 - Pencil Jar</title>
+  <style>
+  body {
+    background: #777777;
+    color: #FFFFFF;
+    font-family: sans-serif;
+  }
+  
+  .title {
+    position: relative;
+    left: 25%;
+    top: -8%;
+    display: block;
+    margin: auto;
+    font-size: 2em;
+    color: #000000;
+  }
+  
+  .box {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    display: block;
+    margin: auto;
+    margin-top: 0%;
+    background: none;
+    overflow: hidden;
+  }
+  
+  .box-inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80%;
+    height: 90%;
+  }
+  
+  .glass-left {
+    position: absolute;
+    bottom: 0.5%;
+    left: 10%;
+    height: 60%;
+    width: 20%;
+    background: lightblue;
+    border-radius: 0 1rem 0 0;
+    opacity: 0.5;
+    clip-path: polygon(0% 100%, 0 0, 100% 0);
+    transform: scale(-1, 1);
+    z-index: 3;
+  }
+  
+  .glass-glossy-upper {
+    position: absolute;
+    bottom: 50%;
+    left: 35%;
+    width: 19%;
+    height: 20%;
+    border-radius: 2rem;
+    background: #ddfbff;
+    transform-origin: center center;
+    transform: rotate(15deg);
+  }
+  
+  .glass-glossy-lower {
+    position: absolute;
+    bottom: 35%;
+    left: 15%;
+    width: 19%;
+    height: 10%;
+    border-radius: 2rem;
+    background: #ddfbff;
+    transform-origin: center center;
+    transform: rotate(15deg);
+  }
+  
+  .glass-middle {
+    position: absolute;
+    bottom: 0.5%;
+    left: 30%;
+    height: 60%;
+    width: 40%;
+    background: lightblue;
+    opacity: 0.5;
+    z-index: 3;
+  }
+  
+  .glass-right {
+    position: absolute;
+    bottom: 0.5%;
+    left: 70%;
+    height: 60%;
+    width: 20%;
+    background: lightblue;
+    border-radius: 0 1rem 0 0;
+    opacity: 0.5;
+    clip-path: polygon(0% 100%, 0 0, 100% 0);
+    z-index: 3;
+  }
+  
+  .crayon1 {
+    position: absolute;
+    bottom: 1%;
+    left: 32%;
+    width: 10%;
+    height: 80%;
+    background: red;
+    transform: rotate(-10deg);
+    transition: 1s;
+    z-index: 2;
+  }
+  
+  .crayon1:hover {
+    bottom: 20%;
+    transform: rotate(1deg);
+    cursor: pointer;
+  }
+  
+  .crayon-end1 {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    width: 110%;
+    height: 13%;
+    background: red;
+    position: absolute;
+    top: -13%;
+    left: -5%;
+  }
+  
+  .crayon-wrapper1 {
+    position: absolute;
+    bottom: 2.5%;
+    left: -2.5%;
+    width: 110%;
+    height: 98%;
+    background: darkred;
+  }
+  
+  .crayon2 {
+    position: absolute;
+    bottom: -2%;
+    left: 55%;
+    width: 10%;
+    height: 80%;
+    background: green;
+    transform: rotate(35deg);
+    transition: 1s;
+    z-index: 2;
+  }
+  
+  .crayon2:hover {
+    bottom: 20%;
+    transform: rotate(1deg);
+    cursor: pointer;
+  }
+  
+  .crayon-end2 {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    width: 110%;
+    height: 13%;
+    background: green;
+    position: absolute;
+    top: -13%;
+    left: -5%;
+  }
+  
+  .crayon-wrapper2 {
+    position: absolute;
+    bottom: 2.5%;
+    left: -2.5%;
+    width: 110%;
+    height: 98%;
+    background: darkgreen;
+  }
+  
+  .crayon3 {
+    position: absolute;
+    bottom: -4%;
+    left: 35%;
+    width: 10%;
+    height: 80%;
+    background: blue;
+    transform: rotate(-35deg);
+    transition: 1s;
+    z-index: 2;
+  }
+  
+  .crayon3:hover {
+    bottom: 20%;
+    transform: rotate(1deg);
+    cursor: pointer;
+  }
+  
+  .crayon-end3 {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    width: 110%;
+    height: 13%;
+    background: blue;
+    position: absolute;
+    top: -13%;
+    left: -5%;
+  }
+  
+  .crayon-wrapper3 {
+    position: absolute;
+    bottom: 2.5%;
+    left: -2.5%;
+    width: 110%;
+    height: 98%;
+    background: darkblue;
+  }
+  
+  .footer {
+    color: #FFFFFF;
+  }
+  .footer p a:active,
+  .footer p a:focus,
+  .footer p a:hover,
+  .footer p a:visited {
+    color: #000000;
+  }
+  </style>
+  <script>
+    window.console = window.console || function(t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  </head>
+  <body translate="no">
+  <div class="title"> Daily CSS - Day 10 - Pencil Jar</div>
+  <div class="box">
+  <div class="box-inner">
+  <div class="glass-left">
+  <div class="glass-glossy-upper"></div>
+  <div class="glass-glossy-lower"></div>
+  </div>
+  <div class="glass-middle">
+  </div>
+  <div class="glass-right">
+  </div>
+  <div class="crayon1">
+  <div class="crayon-end1"></div>
+  <div class="crayon-wrapper1"></div>
+  </div>
+  <div class="crayon2">
+  <div class="crayon-end2"></div>
+  <div class="crayon-wrapper2"></div>
+  </div>
+  <div class="crayon3">
+  <div class="crayon-end3"></div>
+  <div class="crayon-wrapper3"></div>
+  </div>
+  </div>
+  </div>
+  <div class="footer">
+  <hr>
+  <p>Page built by
+  <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (Aspiring Full Stack Developer) 2017</em>
+  </p>
+  
+  
+  
+  </div></body></html>

@@ -1,0 +1,140 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <title>CodePen - Daily CSS Day21 - Superman</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cherry+Cream+Soda">
+  <style>
+  body {
+    background: #074EF4;
+    color: #FFFFFF;
+    font-family: sans-serif;
+  }
+  
+  .title {
+    font-size: 1.5em;
+    text-align: center;
+    color: #FFEB00;
+  }
+  
+  .box {
+    position: relative;
+    width: 600px;
+    height: 500px;
+    margin: auto;
+    background: none;
+    overflow: hidden;
+  }
+  
+  .sheild1 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: 40px;
+    left: 80px;
+    background: #000000;
+    clip-path: polygon(80% 0, 100% 21%, 50% 80%, 0 20%, 20% 0);
+  }
+  
+  .sheild2 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: 40px;
+    left: 80px;
+    background: #C80000;
+    clip-path: polygon(80% 0, 100% 21%, 50% 80%, 0 20%, 20% 0);
+    transform: scale(0.92, 0.92) translateY(-8px);
+  }
+  
+  .sheild3 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: 40px;
+    left: 80px;
+    background: #000000;
+    clip-path: polygon(80% 0, 100% 21%, 50% 80%, 0 20%, 20% 0);
+    transform: scale(0.8, 0.8) translateY(-20px);
+  }
+  
+  .sheild4 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: 40px;
+    left: 80px;
+    background: #FFEB00;
+    clip-path: polygon(80% 0, 100% 21%, 50% 80%, 0 20%, 20% 0);
+    transform: scale(0.72, 0.72) translateY(-34px);
+  }
+  
+  .letter-clip {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: 40px;
+    left: 80px;
+    background: none;
+    clip-path: polygon(80% 0, 100% 21%, 50% 80%, 0 20%, 20% 0);
+    transform: scale(0.8, 0.8) translateY(-20px);
+  }
+  
+  .letter p {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: -522px;
+    left: 20px;
+    color: #C80000;
+    font-family: 'Cherry Cream Soda', cursive;
+    font-size: 25em;
+    transform: scale(1, 0.9);
+    -webkit-text-stroke: 12px black;
+    color: #C80000;
+  }
+  
+  .footer {
+    color: #FFEB00;
+    text-align: center;
+  }
+  .footer p a:active,
+  .footer p a:focus,
+  .footer p a:hover,
+  .footer p a:visited {
+    color: #000000;
+  }
+  </style>
+  <script>
+    window.console = window.console || function(t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  </head>
+  <body translate="no">
+  <div class="title">
+  <h2>Daily CSS - Day 21 - Superman</h2>
+  </div>
+  <div class="box">
+  <div class="sheild1"></div>
+  <div class="sheild2"></div>
+  <div class="sheild3"></div>
+  <div class="sheild4"></div>
+  <div class="letter-clip">
+  <div class="letter">
+  <p>S</p></div>
+  </div>
+  </div>
+  <div class="footer">
+  <hr>
+  <p>
+  Page built by <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (Aspiring Full Stack Developer) 2017</em></p>
+  </div>
+  
+  
+  </body></html>

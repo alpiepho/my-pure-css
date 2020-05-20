@@ -1,0 +1,226 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <title>CodePen - Daily CSS Day26 - Apple App Store Icon</title>
+  <style>
+  body {
+    background: #FFFFFF;
+    color: #000000;
+    font-family: sans-serif;
+  }
+  
+  .title {
+    font-size: 1.5em;
+    text-align: center;
+    color: #2453F9;
+  }
+  
+  .title span {
+    color: #01D3FF;
+  }
+  
+  .box {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    background: none;
+    overflow: hidden;
+  }
+  
+  .container {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    top: 40px;
+    left: 0px;
+    margin: auto;
+    background: #2453F9;
+    background: -webkit-linear-gradient(#01D3FF, #2453F9);
+    background: -o-linear-gradient(#01D3FF, #2453F9);
+    background: -moz-linear-gradient(#01D3FF, #2453F9);
+    background: linear-gradient(#01D3FF, #2453F9);
+    border-radius: 4em;
+  }
+  
+  .circle {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 8%;
+    left: 8%;
+    margin: auto;
+    background: none;
+    border: solid 10px #FFFFFF;
+    border-radius: 50%;
+  }
+  
+  .bar {
+    position: absolute;
+    width: 70%;
+    height: 6%;
+    top: 45%;
+    left: 15%;
+    margin: auto;
+  }
+  
+  .bar-left {
+    width: 20%;
+    height: 6%;
+    top: 45%;
+    left: 15%;
+    -webkit-clip-path: polygon(0 0, 89% 0, 70% 100%, 0% 100%);
+    clip-path: polygon(0 0, 89% 0, 70% 100%, 0% 100%);
+    background: #FFFFFF;
+  }
+  
+  .bar-middle {
+    width: 40%;
+    height: 6%;
+    top: 45%;
+    left: 30%;
+    -webkit-clip-path: polygon(30% 0, 70% 0, 79.5% 100%, 21% 100%);
+    clip-path: polygon(30% 0, 70% 0, 79.5% 100%, 21% 100%);
+    background: #FFFFFF;
+  }
+  
+  .bar-right {
+    width: 20%;
+    height: 6%;
+    top: 45%;
+    left: 65%;
+    -webkit-clip-path: polygon(12% 0, 100% 0, 100% 100%, 30% 100%);
+    clip-path: polygon(12% 0, 100% 0, 100% 100%, 30% 100%);
+    background: #FFFFFF;
+  }
+  
+  .pencil {
+    position: absolute;
+    width: 6%;
+    height: 30%;
+    top: 32%;
+    left: 33%;
+    margin: auto;
+    background: #FFFFFF;
+    transform: rotate(30deg);
+  }
+  .pencil:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 20%;
+    top: -25%;
+    left: 0;
+    background: #FFFFFF;
+    border-radius: 0.5em 0.5em 0 0;
+  }
+  .pencil:after {
+    position: absolute;
+    content: '';
+    -webkit-clip-path: polygon(50% 0%, 40% 100%, 60% 100%);
+    clip-path: polygon(50% 0%, 40% 100%, 60% 100%);
+    width: 500%;
+    height: 40%;
+    top: 105%;
+    left: -200%;
+    background: #FFFFFF;
+    transform: rotate(180deg);
+  }
+  
+  .brush {
+    position: absolute;
+    width: 6%;
+    height: 40%;
+    top: 16%;
+    left: 54.5%;
+    margin: auto;
+    background: #FFFFFF;
+    border-radius: 0.4em 0.4em 0 0;
+    transform: rotate(-30deg);
+  }
+  .brush:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 15%;
+    top: 102%;
+    left: 0;
+    background: #FFFFFF;
+  }
+  .brush:after {
+    position: absolute;
+    content: '';
+    width: 120%;
+    height: 35%;
+    top: 120%;
+    left: -10%;
+    background: #FFFFFF;
+    -webkit-clip-path: polygon(14% 0, 83% 0%, 87% 9%, 90% 19%, 91% 30%, 88% 42%, 83% 52%, 78% 62%, 74% 72%, 71% 80%, 65% 91%, 57% 100%, 50% 90%, 44% 79%, 37% 70%, 30% 60%, 21% 53%, 14% 44%, 10% 36%, 7% 23%, 10% 11%);
+    clip-path: polygon(14% 0, 83% 0%, 87% 9%, 90% 19%, 91% 30%, 88% 42%, 83% 52%, 78% 62%, 74% 72%, 71% 80%, 65% 91%, 57% 100%, 50% 90%, 44% 79%, 37% 70%, 30% 60%, 21% 53%, 14% 44%, 10% 36%, 7% 23%, 10% 11%);
+  }
+  
+  .learning {
+    text-align: center;
+    margin-top: 5%;
+  }
+  
+  .footer {
+    color: #2453F9;
+    text-align: center;
+  }
+  .footer p a:active,
+  .footer p a:focus,
+  .footer p a:hover,
+  .footer p a:visited {
+    color: #01D3FF;
+  }
+  </style>
+  <script>
+    window.console = window.console || function(t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  </head>
+  <body translate="no">
+  <div class="title">
+  <h2>Daily CSS - Day 26 - <span>Apple App Store Icon</span></h2>
+  </div>
+  <div class="box">
+  <div class="container">
+  <div class="circle">
+  <div class="bar bar-left"></div>
+  <div class="bar bar-middle"></div>
+  <div class="bar bar-right"></div>
+  <div class="pencil"></div>
+  <div class="brush"></div>
+  </div>
+  </div>
+  </div>
+  <div class="learning">
+  <h1>Good:</h1>
+  <p>- from review of @kimdobie and here "what I learned" section, started "Good/Bad/Ugly"</p>
+  <p>- trying to add support for all browsers, such as for gradients (see .container)</p>
+  <p>- feel good about seeing how the pieces of the logo would translate to CSS</p>
+  <h1>Bad:</h1>
+  <p>- wish I would have started Good/Bad/Ugly sooner</p>
+  <p>- guessed at dimentions like border radius on container</p>
+  <p>- and time consuming/manual guessing of positions</p>
+  <h1>Ugly:</h1>
+  <p>- maybe I should build a prettyfier tool for Pug/SCSS style?</p>
+  <p>- ok, this took longer than expected...distracted learning new things</p>
+  <p>- really should have spent more time on bristles</p>
+  </div>
+  <div class="footer">
+  <hr>
+  <p>
+  Page built by <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (Aspiring Full Stack Developer) 2017</em></p>
+  </div>
+  
+  
+  </body></html>

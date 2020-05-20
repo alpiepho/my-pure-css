@@ -1,0 +1,5939 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <title>CodePen - Daily CSS Day07 - Ruler</title>
+  <style>
+  body {
+    background: #303130;
+    color: #FFFFFF;
+    font-family: sans-serif;
+  }
+  
+  .title {
+    position: relative;
+    left: 25%;
+    top: -8%;
+    display: block;
+    margin: auto;
+    font-size: 2em;
+  }
+  
+  .message {
+    position: relative;
+    left: 20%;
+    top: 20%;
+    display: block;
+    margin: auto;
+    font-size: 6em;
+    font-weight: bold;
+    color: #990000;
+    opacity: 0.0;
+    animation-name: show-message;
+    animation-delay: 10s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .box {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    display: block;
+    margin: auto;
+    margin-top: 0%;
+    background: none;
+    overflow: hidden;
+  }
+  
+  .outline {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border: solid 2px #000000;
+    background: #FFCC00;
+  }
+  
+  .tick1 {
+    position: absolute;
+    top: 0%;
+    left: 3.3%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick2 {
+    position: absolute;
+    top: 0%;
+    left: 6.6%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick3 {
+    position: absolute;
+    top: 0%;
+    left: 9.9%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick4 {
+    position: absolute;
+    top: 0%;
+    left: 13.2%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick5 {
+    position: absolute;
+    top: 0%;
+    left: 16.5%;
+    width: 0.5%;
+    height: 20%;
+    background: #000000;
+  }
+  
+  .tick6 {
+    position: absolute;
+    top: 0%;
+    left: 19.8%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick7 {
+    position: absolute;
+    top: 0%;
+    left: 23.1%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick8 {
+    position: absolute;
+    top: 0%;
+    left: 26.4%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick9 {
+    position: absolute;
+    top: 0%;
+    left: 29.7%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick10 {
+    position: absolute;
+    top: 0%;
+    left: 33%;
+    width: 0.5%;
+    height: 20%;
+    background: #000000;
+  }
+  
+  .tick11 {
+    position: absolute;
+    top: 0%;
+    left: 36.3%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick12 {
+    position: absolute;
+    top: 0%;
+    left: 39.6%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick13 {
+    position: absolute;
+    top: 0%;
+    left: 42.9%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick14 {
+    position: absolute;
+    top: 0%;
+    left: 46.2%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick15 {
+    position: absolute;
+    top: 0%;
+    left: 49.5%;
+    width: 0.5%;
+    height: 20%;
+    background: #000000;
+  }
+  
+  .tick16 {
+    position: absolute;
+    top: 0%;
+    left: 52.8%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick17 {
+    position: absolute;
+    top: 0%;
+    left: 56.1%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick18 {
+    position: absolute;
+    top: 0%;
+    left: 59.4%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick19 {
+    position: absolute;
+    top: 0%;
+    left: 62.7%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick20 {
+    position: absolute;
+    top: 0%;
+    left: 66%;
+    width: 0.5%;
+    height: 20%;
+    background: #000000;
+  }
+  
+  .tick21 {
+    position: absolute;
+    top: 0%;
+    left: 69.3%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick22 {
+    position: absolute;
+    top: 0%;
+    left: 72.6%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick23 {
+    position: absolute;
+    top: 0%;
+    left: 75.9%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick24 {
+    position: absolute;
+    top: 0%;
+    left: 79.2%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick25 {
+    position: absolute;
+    top: 0%;
+    left: 82.5%;
+    width: 0.5%;
+    height: 20%;
+    background: #000000;
+  }
+  
+  .tick26 {
+    position: absolute;
+    top: 0%;
+    left: 85.8%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick27 {
+    position: absolute;
+    top: 0%;
+    left: 89.1%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick28 {
+    position: absolute;
+    top: 0%;
+    left: 92.4%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick29 {
+    position: absolute;
+    top: 0%;
+    left: 95.7%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick30 {
+    position: absolute;
+    top: 0%;
+    left: 99%;
+    width: 0.5%;
+    height: 20%;
+    background: #000000;
+  }
+  
+  .tick31 {
+    position: absolute;
+    top: 0%;
+    left: 102.3%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick32 {
+    position: absolute;
+    top: 0%;
+    left: 105.6%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick33 {
+    position: absolute;
+    top: 0%;
+    left: 108.9%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick34 {
+    position: absolute;
+    top: 0%;
+    left: 112.2%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick35 {
+    position: absolute;
+    top: 0%;
+    left: 115.5%;
+    width: 0.5%;
+    height: 20%;
+    background: #000000;
+  }
+  
+  .tick36 {
+    position: absolute;
+    top: 0%;
+    left: 118.8%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick37 {
+    position: absolute;
+    top: 0%;
+    left: 122.1%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick38 {
+    position: absolute;
+    top: 0%;
+    left: 125.4%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick39 {
+    position: absolute;
+    top: 0%;
+    left: 128.7%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick40 {
+    position: absolute;
+    top: 0%;
+    left: 132%;
+    width: 0.5%;
+    height: 20%;
+    background: #000000;
+  }
+  
+  .tick41 {
+    position: absolute;
+    top: 0%;
+    left: 135.3%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick42 {
+    position: absolute;
+    top: 0%;
+    left: 138.6%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick43 {
+    position: absolute;
+    top: 0%;
+    left: 141.9%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick44 {
+    position: absolute;
+    top: 0%;
+    left: 145.2%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick45 {
+    position: absolute;
+    top: 0%;
+    left: 148.5%;
+    width: 0.5%;
+    height: 20%;
+    background: #000000;
+  }
+  
+  .tick46 {
+    position: absolute;
+    top: 0%;
+    left: 151.8%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick47 {
+    position: absolute;
+    top: 0%;
+    left: 155.1%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick48 {
+    position: absolute;
+    top: 0%;
+    left: 158.4%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick49 {
+    position: absolute;
+    top: 0%;
+    left: 161.7%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick50 {
+    position: absolute;
+    top: 0%;
+    left: 165%;
+    width: 0.5%;
+    height: 20%;
+    background: #000000;
+  }
+  
+  .tick51 {
+    position: absolute;
+    top: 0%;
+    left: 168.3%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick52 {
+    position: absolute;
+    top: 0%;
+    left: 171.6%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick53 {
+    position: absolute;
+    top: 0%;
+    left: 174.9%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick54 {
+    position: absolute;
+    top: 0%;
+    left: 178.2%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick55 {
+    position: absolute;
+    top: 0%;
+    left: 181.5%;
+    width: 0.5%;
+    height: 20%;
+    background: #000000;
+  }
+  
+  .tick56 {
+    position: absolute;
+    top: 0%;
+    left: 184.8%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick57 {
+    position: absolute;
+    top: 0%;
+    left: 188.1%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick58 {
+    position: absolute;
+    top: 0%;
+    left: 191.4%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick59 {
+    position: absolute;
+    top: 0%;
+    left: 194.7%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick60 {
+    position: absolute;
+    top: 0%;
+    left: 198%;
+    width: 0.5%;
+    height: 20%;
+    background: #000000;
+  }
+  
+  .tick61 {
+    position: absolute;
+    top: 0%;
+    left: 201.3%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick62 {
+    position: absolute;
+    top: 0%;
+    left: 204.6%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick63 {
+    position: absolute;
+    top: 0%;
+    left: 207.9%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick64 {
+    position: absolute;
+    top: 0%;
+    left: 211.2%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick65 {
+    position: absolute;
+    top: 0%;
+    left: 214.5%;
+    width: 0.5%;
+    height: 20%;
+    background: #000000;
+  }
+  
+  .tick66 {
+    position: absolute;
+    top: 0%;
+    left: 217.8%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick67 {
+    position: absolute;
+    top: 0%;
+    left: 221.1%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick68 {
+    position: absolute;
+    top: 0%;
+    left: 224.4%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick69 {
+    position: absolute;
+    top: 0%;
+    left: 227.7%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick70 {
+    position: absolute;
+    top: 0%;
+    left: 231%;
+    width: 0.5%;
+    height: 20%;
+    background: #000000;
+  }
+  
+  .tick71 {
+    position: absolute;
+    top: 0%;
+    left: 234.3%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick72 {
+    position: absolute;
+    top: 0%;
+    left: 237.6%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick73 {
+    position: absolute;
+    top: 0%;
+    left: 240.9%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick74 {
+    position: absolute;
+    top: 0%;
+    left: 244.2%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick75 {
+    position: absolute;
+    top: 0%;
+    left: 247.5%;
+    width: 0.5%;
+    height: 20%;
+    background: #000000;
+  }
+  
+  .tick76 {
+    position: absolute;
+    top: 0%;
+    left: 250.8%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick77 {
+    position: absolute;
+    top: 0%;
+    left: 254.1%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick78 {
+    position: absolute;
+    top: 0%;
+    left: 257.4%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick79 {
+    position: absolute;
+    top: 0%;
+    left: 260.7%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick80 {
+    position: absolute;
+    top: 0%;
+    left: 264%;
+    width: 0.5%;
+    height: 20%;
+    background: #000000;
+  }
+  
+  .tick81 {
+    position: absolute;
+    top: 0%;
+    left: 267.3%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick82 {
+    position: absolute;
+    top: 0%;
+    left: 270.6%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick83 {
+    position: absolute;
+    top: 0%;
+    left: 273.9%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick84 {
+    position: absolute;
+    top: 0%;
+    left: 277.2%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick85 {
+    position: absolute;
+    top: 0%;
+    left: 280.5%;
+    width: 0.5%;
+    height: 20%;
+    background: #000000;
+  }
+  
+  .tick86 {
+    position: absolute;
+    top: 0%;
+    left: 283.8%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick87 {
+    position: absolute;
+    top: 0%;
+    left: 287.1%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick88 {
+    position: absolute;
+    top: 0%;
+    left: 290.4%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick89 {
+    position: absolute;
+    top: 0%;
+    left: 293.7%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick90 {
+    position: absolute;
+    top: 0%;
+    left: 297%;
+    width: 0.5%;
+    height: 20%;
+    background: #000000;
+  }
+  
+  .tick91 {
+    position: absolute;
+    top: 0%;
+    left: 300.3%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick92 {
+    position: absolute;
+    top: 0%;
+    left: 303.6%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick93 {
+    position: absolute;
+    top: 0%;
+    left: 306.9%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick94 {
+    position: absolute;
+    top: 0%;
+    left: 310.2%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick95 {
+    position: absolute;
+    top: 0%;
+    left: 313.5%;
+    width: 0.5%;
+    height: 20%;
+    background: #000000;
+  }
+  
+  .tick96 {
+    position: absolute;
+    top: 0%;
+    left: 316.8%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick97 {
+    position: absolute;
+    top: 0%;
+    left: 320.1%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick98 {
+    position: absolute;
+    top: 0%;
+    left: 323.4%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick99 {
+    position: absolute;
+    top: 0%;
+    left: 326.7%;
+    width: 0.5%;
+    height: 5%;
+    background: #000000;
+  }
+  
+  .tick100 {
+    position: absolute;
+    top: 0%;
+    left: 330%;
+    width: 0.5%;
+    height: 20%;
+    background: #000000;
+  }
+  
+  .ruler:nth-of-type(0) {
+    position: absolute;
+    top: 33%;
+    left: 98%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(44deg) scale(0.8, 0.04);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 0s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(1) {
+    position: absolute;
+    top: 78%;
+    left: 87%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(317deg) scale(0.39, 0.29);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 0.1s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(2) {
+    position: absolute;
+    top: 93%;
+    left: 43%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(51deg) scale(0.28, 0.66);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 0.2s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(3) {
+    position: absolute;
+    top: 19%;
+    left: 5%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(277deg) scale(0.58, 0.63);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 0.3s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(4) {
+    position: absolute;
+    top: 70%;
+    left: 48%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(270deg) scale(0.06, 0.26);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 0.4s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(5) {
+    position: absolute;
+    top: 63%;
+    left: 57%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(74deg) scale(0.26, 0.5);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 0.5s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(6) {
+    position: absolute;
+    top: 20%;
+    left: 49%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(49deg) scale(0.54, 0.72);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 0.6s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(7) {
+    position: absolute;
+    top: 9%;
+    left: 98%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(154deg) scale(0.33, 0.39);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 0.7s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(8) {
+    position: absolute;
+    top: 37%;
+    left: 63%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(301deg) scale(0.24, 0.29);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 0.8s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(9) {
+    position: absolute;
+    top: 68%;
+    left: 89%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(251deg) scale(0.86, 0.27);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 0.9s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(10) {
+    position: absolute;
+    top: 69%;
+    left: 13%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(62deg) scale(0.47, 0.15);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 1s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(11) {
+    position: absolute;
+    top: 6%;
+    left: 90%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(32deg) scale(1, 0.33);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 1.1s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(12) {
+    position: absolute;
+    top: 94%;
+    left: 100%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(337deg) scale(0.96, 0.63);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 1.2s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(13) {
+    position: absolute;
+    top: 56%;
+    left: 45%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(154deg) scale(0.84, 0.93);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 1.3s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(14) {
+    position: absolute;
+    top: 66%;
+    left: 52%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(326deg) scale(0.49, 0.58);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 1.4s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(15) {
+    position: absolute;
+    top: 62%;
+    left: 39%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(255deg) scale(1, 0.89);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 1.5s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(16) {
+    position: absolute;
+    top: 5%;
+    left: 100%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(254deg) scale(0.1, 0.52);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 1.6s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(17) {
+    position: absolute;
+    top: 45%;
+    left: 75%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(251deg) scale(0.87, 0.78);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 1.7s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(18) {
+    position: absolute;
+    top: 96%;
+    left: 15%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(309deg) scale(0.23, 0.77);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 1.8s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(19) {
+    position: absolute;
+    top: 33%;
+    left: 77%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(311deg) scale(0.06, 0.09);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 1.9s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(20) {
+    position: absolute;
+    top: 13%;
+    left: 75%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(328deg) scale(0.05, 0.73);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 2s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(21) {
+    position: absolute;
+    top: 7%;
+    left: 46%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(6deg) scale(0.13, 0.16);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 2.1s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(22) {
+    position: absolute;
+    top: 17%;
+    left: 53%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(119deg) scale(0.61, 0.17);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 2.2s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(23) {
+    position: absolute;
+    top: 94%;
+    left: 82%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(129deg) scale(0.77, 0.27);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 2.3s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(24) {
+    position: absolute;
+    top: 92%;
+    left: 67%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(175deg) scale(0.7, 0.43);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 2.4s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(25) {
+    position: absolute;
+    top: 97%;
+    left: 85%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(265deg) scale(0.62, 0.53);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 2.5s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(26) {
+    position: absolute;
+    top: 67%;
+    left: 26%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(338deg) scale(0.42, 0.79);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 2.6s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(27) {
+    position: absolute;
+    top: 38%;
+    left: 91%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(173deg) scale(0.54, 0.56);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 2.7s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(28) {
+    position: absolute;
+    top: 46%;
+    left: 46%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(280deg) scale(0.05, 0.39);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 2.8s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(29) {
+    position: absolute;
+    top: 74%;
+    left: 22%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(332deg) scale(0.86, 0.4);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 2.9s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(30) {
+    position: absolute;
+    top: 69%;
+    left: 89%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(158deg) scale(0.95, 0.47);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 3s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(31) {
+    position: absolute;
+    top: 33%;
+    left: 83%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(293deg) scale(0.03, 0.98);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 3.1s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(32) {
+    position: absolute;
+    top: 18%;
+    left: 53%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(35deg) scale(0.65, 0.13);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 3.2s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(33) {
+    position: absolute;
+    top: 14%;
+    left: 34%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(320deg) scale(0.9, 0.95);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 3.3s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(34) {
+    position: absolute;
+    top: 89%;
+    left: 35%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(183deg) scale(0.85, 0.73);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 3.4s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(35) {
+    position: absolute;
+    top: 64%;
+    left: 66%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(86deg) scale(0.34, 0.25);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 3.5s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(36) {
+    position: absolute;
+    top: 7%;
+    left: 73%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(236deg) scale(0.32, 0.15);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 3.6s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(37) {
+    position: absolute;
+    top: 14%;
+    left: 38%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(104deg) scale(0.51, 0.64);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 3.7s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(38) {
+    position: absolute;
+    top: 75%;
+    left: 81%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(88deg) scale(0.26, 0.76);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 3.8s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(39) {
+    position: absolute;
+    top: 80%;
+    left: 47%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(49deg) scale(0.26, 0.51);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 3.9s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(40) {
+    position: absolute;
+    top: 82%;
+    left: 81%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(16deg) scale(0.75, 0.48);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 4s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(41) {
+    position: absolute;
+    top: 33%;
+    left: 75%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(87deg) scale(0.6, 0.1);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 4.1s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(42) {
+    position: absolute;
+    top: 62%;
+    left: 48%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(175deg) scale(0.31, 0.34);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 4.2s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(43) {
+    position: absolute;
+    top: 81%;
+    left: 42%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(155deg) scale(0.53, 0.53);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 4.3s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(44) {
+    position: absolute;
+    top: 1%;
+    left: 12%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(82deg) scale(0.53, 0.3);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 4.4s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(45) {
+    position: absolute;
+    top: 69%;
+    left: 34%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(45deg) scale(0.31, 0.05);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 4.5s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(46) {
+    position: absolute;
+    top: 24%;
+    left: 22%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(113deg) scale(0.82, 0.43);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 4.6s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(47) {
+    position: absolute;
+    top: 90%;
+    left: 6%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(77deg) scale(0.6, 0.7);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 4.7s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(48) {
+    position: absolute;
+    top: 63%;
+    left: 82%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(35deg) scale(0.73, 0.94);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 4.8s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(49) {
+    position: absolute;
+    top: 44%;
+    left: 63%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(327deg) scale(0.24, 0.11);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 4.9s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(50) {
+    position: absolute;
+    top: 80%;
+    left: 77%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(222deg) scale(1, 0.89);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 5s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(51) {
+    position: absolute;
+    top: 90%;
+    left: 16%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(201deg) scale(0.75, 0.56);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 5.1s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(52) {
+    position: absolute;
+    top: 4%;
+    left: 93%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(152deg) scale(0.64, 0.53);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 5.2s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(53) {
+    position: absolute;
+    top: 73%;
+    left: 9%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(172deg) scale(0.15, 0.8);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 5.3s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(54) {
+    position: absolute;
+    top: 9%;
+    left: 88%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(35deg) scale(0.68, 0.95);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 5.4s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(55) {
+    position: absolute;
+    top: 27%;
+    left: 69%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(5deg) scale(0.03, 0.73);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 5.5s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(56) {
+    position: absolute;
+    top: 45%;
+    left: 28%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(153deg) scale(0.1, 0.39);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 5.6s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(57) {
+    position: absolute;
+    top: 31%;
+    left: 61%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(131deg) scale(0.57, 0.77);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 5.7s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(58) {
+    position: absolute;
+    top: 100%;
+    left: 41%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(52deg) scale(0.43, 0.7);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 5.8s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(59) {
+    position: absolute;
+    top: 75%;
+    left: 58%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(253deg) scale(0.59, 0.87);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 5.9s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(60) {
+    position: absolute;
+    top: 6%;
+    left: 36%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(324deg) scale(0.96, 1);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 6s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(61) {
+    position: absolute;
+    top: 89%;
+    left: 28%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(146deg) scale(0.32, 0.18);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 6.1s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(62) {
+    position: absolute;
+    top: 96%;
+    left: 19%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(118deg) scale(0.49, 0.59);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 6.2s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(63) {
+    position: absolute;
+    top: 15%;
+    left: 40%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(232deg) scale(0.46, 0.79);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 6.3s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(64) {
+    position: absolute;
+    top: 48%;
+    left: 82%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(259deg) scale(0.13, 0.2);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 6.4s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(65) {
+    position: absolute;
+    top: 92%;
+    left: 57%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(59deg) scale(0.95, 0.62);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 6.5s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(66) {
+    position: absolute;
+    top: 74%;
+    left: 39%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(104deg) scale(0.06, 0.04);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 6.6s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(67) {
+    position: absolute;
+    top: 16%;
+    left: 43%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(98deg) scale(0.06, 0.67);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 6.7s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(68) {
+    position: absolute;
+    top: 54%;
+    left: 73%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(38deg) scale(0.37, 0.99);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 6.8s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(69) {
+    position: absolute;
+    top: 69%;
+    left: 3%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(294deg) scale(0.59, 0.26);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 6.9s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(70) {
+    position: absolute;
+    top: 17%;
+    left: 36%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(257deg) scale(0.77, 1);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 7s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(71) {
+    position: absolute;
+    top: 67%;
+    left: 84%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(259deg) scale(0.35, 0.44);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 7.1s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(72) {
+    position: absolute;
+    top: 2%;
+    left: 77%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(63deg) scale(0.91, 0.99);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 7.2s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(73) {
+    position: absolute;
+    top: 51%;
+    left: 69%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(248deg) scale(0.76, 0.67);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 7.3s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(74) {
+    position: absolute;
+    top: 21%;
+    left: 59%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(88deg) scale(0.7, 0.97);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 7.4s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(75) {
+    position: absolute;
+    top: 13%;
+    left: 99%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(45deg) scale(0.87, 0.74);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 7.5s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(76) {
+    position: absolute;
+    top: 49%;
+    left: 41%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(327deg) scale(0.21, 0.61);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 7.6s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(77) {
+    position: absolute;
+    top: 86%;
+    left: 37%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(112deg) scale(0.54, 0.62);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 7.7s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(78) {
+    position: absolute;
+    top: 21%;
+    left: 84%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(214deg) scale(0.43, 0.53);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 7.8s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(79) {
+    position: absolute;
+    top: 88%;
+    left: 20%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(43deg) scale(0.33, 0.24);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 7.9s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(80) {
+    position: absolute;
+    top: 15%;
+    left: 64%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(152deg) scale(0.23, 0.76);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 8s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(81) {
+    position: absolute;
+    top: 69%;
+    left: 51%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(191deg) scale(0.12, 0.48);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 8.1s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(82) {
+    position: absolute;
+    top: 20%;
+    left: 39%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(24deg) scale(0.82, 0.24);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 8.2s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(83) {
+    position: absolute;
+    top: 89%;
+    left: 82%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(229deg) scale(0.49, 0.33);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 8.3s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(84) {
+    position: absolute;
+    top: 9%;
+    left: 47%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(312deg) scale(0.89, 0.74);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 8.4s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(85) {
+    position: absolute;
+    top: 41%;
+    left: 54%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(8deg) scale(0.28, 0.37);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 8.5s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(86) {
+    position: absolute;
+    top: 92%;
+    left: 41%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(352deg) scale(0.49, 0.84);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 8.6s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(87) {
+    position: absolute;
+    top: 68%;
+    left: 1%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(320deg) scale(0.61, 0.08);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 8.7s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(88) {
+    position: absolute;
+    top: 79%;
+    left: 78%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(352deg) scale(0.83, 0.27);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 8.8s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(89) {
+    position: absolute;
+    top: 71%;
+    left: 80%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(68deg) scale(0.44, 0.83);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 8.9s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(90) {
+    position: absolute;
+    top: 78%;
+    left: 1%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(49deg) scale(0.76, 0.18);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 9s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(91) {
+    position: absolute;
+    top: 98%;
+    left: 19%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(19deg) scale(0.49, 0.56);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 9.1s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(92) {
+    position: absolute;
+    top: 50%;
+    left: 69%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(281deg) scale(0.12, 0.9);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 9.2s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(93) {
+    position: absolute;
+    top: 30%;
+    left: 53%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(150deg) scale(0.44, 0.04);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 9.3s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(94) {
+    position: absolute;
+    top: 26%;
+    left: 63%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(354deg) scale(0.48, 0.01);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 9.4s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(95) {
+    position: absolute;
+    top: 43%;
+    left: 88%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(223deg) scale(0.86, 0.26);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 9.5s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(96) {
+    position: absolute;
+    top: 81%;
+    left: 17%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(239deg) scale(0.41, 0.69);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 9.6s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(97) {
+    position: absolute;
+    top: 67%;
+    left: 30%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(133deg) scale(0.43, 0.53);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 9.7s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(98) {
+    position: absolute;
+    top: 57%;
+    left: 22%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(270deg) scale(0.1, 0.55);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 9.8s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(99) {
+    position: absolute;
+    top: 59%;
+    left: 23%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(308deg) scale(0.83, 0.88);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 9.9s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(100) {
+    position: absolute;
+    top: 27%;
+    left: 12%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(24deg) scale(0.37, 0.87);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 10s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  .ruler:nth-of-type(101) {
+    position: absolute;
+    top: 19%;
+    left: 23%;
+    width: 100%;
+    height: 20%;
+    background: none;
+    transform-origin: left center;
+    transform: rotate(71deg) scale(0.3, 0.12);
+    opacity: 0.0;
+    animation-name: show-ruler;
+    animation-delay: 10.1s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  
+  @keyframes show-message {
+    100% {
+      opacity: 1.0;
+    }
+  }
+  @keyframes show-ruler {
+    100% {
+      opacity: 1.0;
+    }
+  }
+  .footer {
+    color: #FFFFFF;
+  }
+  .footer a:active,
+  .footer a:focus,
+  .footer a:hover,
+  .footer a:visited {
+    color: #FFCC00;
+  }
+  </style>
+  <script>
+    window.console = window.console || function(t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  </head>
+  <body translate="no">
+  
+  <div class="title">Daily CSS - Day 7 - Ruler</div>
+  <div class="box">
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+   <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+   <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+   <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="ruler">
+  <div class="outline"></div>
+  <div class="tick1"></div>
+  <div class="tick2"></div>
+  <div class="tick3"></div>
+  <div class="tick4"></div>
+  <div class="tick5"></div>
+  <div class="tick6"></div>
+  <div class="tick7"></div>
+  <div class="tick8"></div>
+  <div class="tick9"></div>
+  <div class="tick10"></div>
+  <div class="tick11"></div>
+  <div class="tick12"></div>
+  <div class="tick13"></div>
+  <div class="tick14"></div>
+  <div class="tick15"></div>
+  <div class="tick16"></div>
+  <div class="tick17"></div>
+  <div class="tick18"></div>
+  <div class="tick19"></div>
+  <div class="tick20"></div>
+  <div class="tick21"></div>
+  <div class="tick22"></div>
+  <div class="tick23"></div>
+  <div class="tick24"></div>
+  <div class="tick25"></div>
+  <div class="tick26"></div>
+  <div class="tick27"></div>
+  <div class="tick28"></div>
+  <div class="tick29"></div>
+  </div>
+  <div class="message">CSS "Rules"!</div>
+  </div>
+  <div class="footer">
+  <hr>
+  <p>
+  Page built by <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (Aspiring Full Stack Developer) 2017</em></p>
+  </div>
+  
+  
+  </body></html>

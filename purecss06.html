@@ -1,0 +1,368 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <title>CodePen - Daily CSS Day06 - Clock</title>
+  <style>
+  body {
+    background: #303130;
+    color: #FFFFFF;
+    font-family: sans-serif;
+  }
+  
+  .title {
+    position: relative;
+    left: 20%;
+    top: -8%;
+    display: block;
+    margin: auto;
+    font-size: 2em;
+  }
+  
+  .box {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    display: block;
+    margin: auto;
+    margin-top: 8%;
+    background: none;
+  }
+  
+  .dclock {
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    font-size: 2em;
+  }
+  
+  .digit5::after {
+    content: "0";
+    animation-name: digits60;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: step-end;
+  }
+  
+  .digit4::after {
+    content: "0";
+    animation-name: digits;
+    animation-duration: 600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: step-end;
+  }
+  
+  .digit3::after {
+    content: "0";
+    animation-name: digits60;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: step-end;
+  }
+  
+  .digit2::after {
+    content: "0";
+    animation-name: digits;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: step-end;
+  }
+  
+  .aclock {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    border: solid 8px;
+    border-color: #FFFFFF;
+    background: none;
+  }
+  
+  .aclock-inner {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: #303130;
+  }
+  
+  .ticks .tick:nth-of-type(1) {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 1%;
+    height: 50%;
+    background: #FFFFFF;
+    transform: rotate(30deg);
+    transform-origin: bottom;
+  }
+  .ticks .tick:nth-of-type(2) {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 1%;
+    height: 50%;
+    background: #FFFFFF;
+    transform: rotate(60deg);
+    transform-origin: bottom;
+  }
+  .ticks .tick:nth-of-type(3) {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 1%;
+    height: 50%;
+    background: #FFFFFF;
+    transform: rotate(90deg);
+    transform-origin: bottom;
+  }
+  .ticks .tick:nth-of-type(4) {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 1%;
+    height: 50%;
+    background: #FFFFFF;
+    transform: rotate(120deg);
+    transform-origin: bottom;
+  }
+  .ticks .tick:nth-of-type(5) {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 1%;
+    height: 50%;
+    background: #FFFFFF;
+    transform: rotate(150deg);
+    transform-origin: bottom;
+  }
+  .ticks .tick:nth-of-type(6) {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 1%;
+    height: 50%;
+    background: #FFFFFF;
+    transform: rotate(180deg);
+    transform-origin: bottom;
+  }
+  .ticks .tick:nth-of-type(7) {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 1%;
+    height: 50%;
+    background: #FFFFFF;
+    transform: rotate(210deg);
+    transform-origin: bottom;
+  }
+  .ticks .tick:nth-of-type(8) {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 1%;
+    height: 50%;
+    background: #FFFFFF;
+    transform: rotate(240deg);
+    transform-origin: bottom;
+  }
+  .ticks .tick:nth-of-type(9) {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 1%;
+    height: 50%;
+    background: #FFFFFF;
+    transform: rotate(270deg);
+    transform-origin: bottom;
+  }
+  .ticks .tick:nth-of-type(10) {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 1%;
+    height: 50%;
+    background: #FFFFFF;
+    transform: rotate(300deg);
+    transform-origin: bottom;
+  }
+  .ticks .tick:nth-of-type(11) {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 1%;
+    height: 50%;
+    background: #FFFFFF;
+    transform: rotate(330deg);
+    transform-origin: bottom;
+  }
+  .ticks .tick:nth-of-type(12) {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 1%;
+    height: 50%;
+    background: #FFFFFF;
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+  
+  .hand {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 1%;
+    height: 50%;
+    background: #FFFFFF;
+    transform: rotate(0deg);
+    transform-origin: bottom;
+    animation-name: clock-hand;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  .footer {
+    color: #FFFFFF;
+  }
+  .footer a:active,
+  .footer a:focus,
+  .footer a:hover,
+  .footer a:visited {
+    color: #DDBD63;
+  }
+  
+  .template1 {
+    position: absolute;
+    top: 65%;
+    left: 41%;
+    width: 12%;
+    height: 8%;
+    border-radius: 0 0 50% 50%;
+    background: #000000;
+    transform-origin: top center;
+  }
+  
+  .template2 {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #FFFFFF;
+  }
+  
+  @keyframes clock-hand {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes digits {
+    0% {
+      content: "0";
+    }
+    10% {
+      content: "1";
+    }
+    20% {
+      content: "2";
+    }
+    30% {
+      content: "3";
+    }
+    40% {
+      content: "4";
+    }
+    50% {
+      content: "5";
+    }
+    60% {
+      content: "6";
+    }
+    70% {
+      content: "7";
+    }
+    80% {
+      content: "8";
+    }
+    90% {
+      content: "9";
+    }
+    100% {
+      content: "0";
+    }
+  }
+  @keyframes digits60 {
+    0% {
+      content: "0";
+    }
+    16.67% {
+      content: "1";
+    }
+    33.33% {
+      content: "2";
+    }
+    50% {
+      content: "3";
+    }
+    66.67% {
+      content: "4";
+    }
+    83.33% {
+      content: "5";
+    }
+    100% {
+      content: "0";
+    }
+  }
+  </style>
+  <script>
+    window.console = window.console || function(t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  </head>
+  <body translate="no">
+  <div class="box">
+  <div class="title">Daily CSS - Day 6 - Clock</div>
+  <div class="dclock"><span class="digit5"></span><span class="digit4"></span><span>:</span><span class="digit3"></span><span class="digit2"></span></div>
+  <div class="aclock">
+  <div class="ticks">
+  <div class="tick"></div>
+  <div class="tick"></div>
+  <div class="tick"></div>
+  <div class="tick"></div>
+  <div class="tick"></div>
+  <div class="tick"></div>
+  <div class="tick"></div>
+  <div class="tick"></div>
+  <div class="tick"></div>
+  <div class="tick"></div>
+  <div class="tick"></div>
+  <div class="tick"></div>
+  </div>
+  <div class="aclock-inner"></div>
+  <div class="hand"></div>
+  </div>
+  </div>
+  <div class="footer">
+  <hr>
+  <p>
+  Page built by <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (Aspiring Full Stack Developer) 2017</em></p>
+  </div>
+  
+  
+  </body></html>

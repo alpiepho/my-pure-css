@@ -1,0 +1,275 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <title>CodePen - Daily CSS Day12 - Hamburger</title>
+  <style>
+  body {
+    background: #EBD09B;
+    color: #FFFFFF;
+    font-family: sans-serif;
+  }
+  
+  .title {
+    position: relative;
+    left: 25%;
+    top: -8%;
+    display: block;
+    margin: auto;
+    font-size: 2em;
+    color: #000000;
+  }
+  
+  .box {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    display: block;
+    margin: auto;
+    margin-top: 0%;
+    background: none;
+    overflow: hidden;
+  }
+  
+  .bun-upper {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    height: 10%;
+    width: 40%;
+    background: #DF7B30;
+    border-radius: 4rem 4rem 0 0;
+    animation-name: show-part;
+    animation-delay: 7s;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    transform: translate(0px, -500px);
+  }
+  
+  .lettuce {
+    position: absolute;
+    top: 51%;
+    left: 30%;
+    height: 2%;
+    width: 40%;
+    background: #6DA000;
+    border-radius: 1rem 0 1rem 0;
+    animation-name: show-part;
+    animation-delay: 6s;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    transform: translate(0px, -500px);
+  }
+  
+  .tomato {
+    position: absolute;
+    top: 55%;
+    left: 30%;
+    height: 2%;
+    width: 40%;
+    background: #E83330;
+    animation-name: show-part;
+    animation-delay: 5s;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    transform: translate(0px, -500px);
+  }
+  
+  .pickle1 {
+    position: absolute;
+    top: 58%;
+    left: 32%;
+    height: 1%;
+    width: 8%;
+    background: #70A900;
+    animation-name: show-part;
+    animation-delay: 4s;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    transform: translate(0px, -500px);
+  }
+  
+  .pickle2 {
+    position: absolute;
+    top: 58%;
+    left: 46%;
+    height: 1%;
+    width: 8%;
+    background: #70A900;
+    animation-name: show-part;
+    animation-delay: 4s;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    transform: translate(0px, -500px);
+  }
+  
+  .pickle3 {
+    position: absolute;
+    top: 58%;
+    left: 60%;
+    height: 1%;
+    width: 8%;
+    background: #70A900;
+    animation-name: show-part;
+    animation-delay: 4s;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    transform: translate(0px, -500px);
+  }
+  
+  .onion {
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    height: 1%;
+    width: 40%;
+    background: #9E3D6D;
+    animation-name: show-part;
+    animation-delay: 3s;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    transform: translate(0px, -500px);
+  }
+  
+  .cheese {
+    position: absolute;
+    top: 62%;
+    left: 30%;
+    height: 2%;
+    width: 40%;
+    background: #FFB400;
+    border-radius: 4rem 4rem 0 0;
+    z-index: 3;
+    animation-name: show-part;
+    animation-delay: 2s;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    transform: translate(0px, -500px);
+  }
+  
+  .cheese-drip1 {
+    position: absolute;
+    top: 62%;
+    left: 65%;
+    height: 10%;
+    width: 2%;
+    background: #FFB400;
+    border-radius: 4rem;
+    z-index: 3;
+    animation-name: show-part;
+    animation-delay: 2s;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    transform: translate(0px, -500px);
+  }
+  
+  .cheese-drip2 {
+    position: absolute;
+    top: 62%;
+    left: 60%;
+    height: 7%;
+    width: 2%;
+    background: #FFB400;
+    border-radius: 4rem;
+    z-index: 3;
+    animation-name: show-part;
+    animation-delay: 2s;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    transform: translate(0px, -500px);
+  }
+  
+  .patty {
+    position: absolute;
+    top: 64%;
+    left: 30%;
+    height: 4%;
+    width: 40%;
+    background: #9D4845;
+    border-radius: 0.5rem;
+    animation-name: show-part;
+    animation-delay: 1s;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    transform: translate(0px, -500px);
+  }
+  
+  .bun-lower {
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    height: 6%;
+    width: 40%;
+    background: #DF7B30;
+    border-radius: 0 0 4rem 4rem;
+    animation-name: show-part;
+    animation-delay: 0s;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    transform: translate(0px, -500px);
+  }
+  
+  .footer {
+    color: #000000;
+  }
+  .footer p a:active,
+  .footer p a:focus,
+  .footer p a:hover,
+  .footer p a:visited {
+    color: #DF7B30;
+  }
+  
+  @keyframes show-part {
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+  </style>
+  <script>
+    window.console = window.console || function(t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  </head>
+  <body translate="no">
+  <div class="title"> Daily CSS - Day 12 - Hamburger</div>
+  <div class="box">
+  <div class="bun-upper"></div>
+  <div class="lettuce"></div>
+  <div class="tomato"></div>
+  <div class="pickle1"></div>
+  <div class="pickle2"></div>
+  <div class="pickle3"></div>
+  <div class="onion"></div>
+  <div class="cheese"></div>
+  <div class="cheese-drip1"></div>
+  <div class="cheese-drip2"></div>
+  <div class="patty"></div>
+  <div class="bun-lower"></div>
+  </div>
+  <div class="footer">
+  <hr>
+  <p>Page built by
+  <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (Aspiring Full Stack Developer) 2017</em>
+  </p>
+  
+  
+  
+  </div></body></html>

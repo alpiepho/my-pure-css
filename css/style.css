@@ -1,12 +1,19 @@
 .body {
     margin: auto;
-    width: 500px;
+    width: 800px;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 16pt;
+    padding: 20px;
 }
+
 
 a {
     text-decoration: none;
 }
+
+/* div a {
+    padding: 40px;
+} */
 
 a:visited {
     color: blue;
@@ -14,4 +21,15 @@ a:visited {
 
 .all-links {
     margin-bottom: 100px;
+}
+
+.all-links div {
+    padding: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .body {
+        width: 500px;
+        font-size: 18pt;
+    }
 }

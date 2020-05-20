@@ -1,0 +1,147 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <title>CodePen - Daily CSS Day33 - VueJS Logo</title>
+  <style>
+  body {
+    background: #C7EADB;
+    color: #FFFFFF;
+    font-family: sans-serif;
+  }
+  
+  .box {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    background: none;
+    overflow: hidden;
+  }
+  
+  .title {
+    font-size: 1.5em;
+    text-align: center;
+    color: #41B883;
+  }
+  
+  .title span {
+    color: #41B883;
+  }
+  
+  .container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: auto;
+    transform: rotate(180deg);
+  }
+  
+  .letter-outer {
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    top: 5%;
+    left: 12.5%;
+    -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform: scale(0.9, 0.9);
+    margin: auto;
+    background: #41B883;
+  }
+  
+  .letter-mid {
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    top: 33%;
+    left: 12.5%;
+    -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform: scale(0.9, 0.9);
+    margin: auto;
+    background: #35495E;
+  }
+  
+  .letter-inner {
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    top: 73%;
+    left: 12.5%;
+    -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform: scale(0.9, 0.9);
+    margin: auto;
+    background: #C7EADB;
+  }
+  
+  .learning {
+    color: #41B883;
+    text-align: center;
+  }
+  
+  .footer {
+    color: #41B883;
+    text-align: center;
+  }
+  .footer p a:active,
+  .footer p a:focus,
+  .footer p a:hover,
+  .footer p a:visited {
+    color: #41B883;
+  }
+  
+  /*
+  @keyframes show-blink {
+     0%   { transform: scale(1, 1); }
+    20%   { transform: scale(1, 1); }
+    21%   { transform: scale(1, 0.1); }
+    22%   { transform: scale(1, 1);  }
+    100%  { transform: scale(1, 1); }
+  }
+  */
+  </style>
+  <script>
+    window.console = window.console || function(t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  </head>
+  <body translate="no">
+  
+  <div class="title">
+  <h2>Daily CSS - Day 33 - <span>VueJS Logo</span></h2>
+  </div>
+  <div class="box">
+  <div class="container">
+  <div class="letter-outer">
+  <div class="letter-mid"></div>
+  <div class="letter-inner"></div>
+  </div>
+  </div>
+  </div>
+  <div class="learning">
+  <h1>Good:</h1>
+  <p>- Again, nice to work on a challenge that was pretty quick.</p>
+  <h1>Bad:</h1>
+  <p>- Eye balled the dimentions of the letter widths etc.</p>
+  <h1>Ugly:</h1>
+  <p>- Leveraged last pen for AngularJs and inverted.</p>
+  <p>- Should work thru logic without inversion.</p>
+  </div>
+  <div class="footer">
+  <hr>
+  <p>
+  Page built by <a rel="nofollow" href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/" target="_blank">Al Piepho</a> <em> (Aspiring Full Stack Developer) 2017</em></p>
+  </div>
+  
+  
+  </body></html>
